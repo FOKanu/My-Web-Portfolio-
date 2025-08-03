@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+import { Activity } from 'lucide-react';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -65,9 +66,9 @@ const Navigation = () => {
     } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
       <div className="container mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center gap-4 rounded-2xl bg-background/20 border border-white/10 backdrop-blur-md px-4 py-2">
-          {/* Brand - Always Sticky */}
-          <div className="flex-shrink-0 text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Francis I.K.
+          {/* Brand Icon - Always Sticky */}
+          <div className="flex-shrink-0 p-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl">
+            <Activity className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
           </div>
 
           {/* Scrollable Navigation */}
