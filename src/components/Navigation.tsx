@@ -70,7 +70,7 @@ const Navigation = () => {
           <div className="flex-shrink-0">
             <Avatar className="w-10 h-10 sm:w-12 sm:h-12 ring-2 ring-cyan-400/50">
               <AvatarImage 
-                src="/lovable-uploads/3030958e-2cbc-44e2-b4af-b3edded99c20.png" 
+                src="/lovable-uploads/67c0f36c-9a89-489b-bfb6-4df41af44461.png" 
                 alt="Francis I.K."
                 className="object-cover"
               />
