@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Code, Database, Brain, Cloud, Wrench, GitBranch } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import skillsBg from '@/assets/skills-bg.jpg';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,8 +64,19 @@ const Skills = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="skills" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-6">
+    <section 
+      ref={sectionRef} 
+      id="skills" 
+      className="py-20 relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${skillsBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-background/85"></div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
