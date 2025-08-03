@@ -121,10 +121,10 @@ const About = () => {
 
             <Card className="card-professional">
               <CardContent className="p-6">
-                <h4 className="font-semibold text-gradient-accent mb-3">Languages & Interests</h4>
+                <h4 className="font-semibold text-gradient-accent mb-3">Multilingual & Creative</h4>
                 <div className="space-y-2 text-sm text-muted-foreground">
-                  <div><span className="font-medium">Languages:</span> English, Russian, German, Ga, Twi, Hausa, Dagomba</div>
-                  <div><span className="font-medium">Interests:</span> Writing, Philosophy, Gaming, Fitness, Film Analysis</div>
+                  <div><span className="font-medium">Languages:</span> 6 languages across 3 continents</div>
+                  <div><span className="font-medium">Focus:</span> Creative writing, philosophy, and intellectual pursuits</div>
                 </div>
               </CardContent>
             </Card>
