@@ -38,7 +38,7 @@ const Hero = () => {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
         <h1 className="text-6xl md:text-8xl font-bold mb-6">
-          <span className="text-gradient animate-fade-in">Francis I.K.</span>
+          <span className="text-gradient animate-fade-in">Francis Kanu</span>
         </h1>
         
         <div className={`text-2xl md:text-3xl mb-4 transition-all duration-1000 delay-300 ${
