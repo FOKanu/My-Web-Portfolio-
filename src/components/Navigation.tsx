@@ -83,7 +83,7 @@ const Navigation = () => {
           {/* Scrollable Navigation */}
           <div className="flex-1 min-w-0">
             <ScrollArea className="w-full">
-              <div className="flex items-center gap-1 sm:gap-2 pb-2">
+              <div className="flex items-center justify-center gap-1 sm:gap-2 pb-2">
                 {navItems.map((item) => {
                   const isActive = activeSection === item.href.substring(1);
                   return (
