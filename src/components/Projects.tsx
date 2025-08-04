@@ -28,12 +28,20 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'DoctAI',
+      title: 'Skin Check AI',
       description: 'AI-powered skin lesion detection application using computer vision and deep learning to assist in early dermatological diagnosis.',
-      technologies: ['Python', 'TensorFlow', 'React Native', 'FastAPI', 'OpenCV'],
+      technologies: ['Python', 'TensorFlow', 'React', 'FastAPI', 'OpenCV'],
       category: 'AI/ML Healthcare',
       status: 'Production',
-      image: 'medical-ai'
+      image: 'skin-check-ai'
+     },
+     {
+       title: 'DoctAI',
+       description: 'AI-powered skin lesion detection application using computer vision and deep learning to assist in early dermatological diagnosis.',
+       technologies: ['Python', 'TensorFlow', 'React Native', 'FastAPI', 'OpenCV'],
+       category: 'AI/ML Healthcare',
+       status: 'Production',
+       image: 'medical-ai'
     },
     {
       title: 'Personal Finance Tracker',
