@@ -211,7 +211,7 @@ const Projects = () => {
                               <img 
                                 src="/images/projects/doctai-logo.png" 
                                 alt="DoctAI Health Hub Logo"
-                                className="w-32 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300"
+                                className="w-40 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300 rounded-lg"
                               />
                               <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
                               <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
