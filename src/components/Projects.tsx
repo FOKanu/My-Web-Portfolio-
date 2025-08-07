@@ -191,18 +191,50 @@ const Projects = () => {
                         className="block cursor-pointer group"
                       >
                         <div className="aspect-video bg-gradient-card rounded-lg border border-border/50 flex items-center justify-center group-hover:border-primary/50 group-hover:shadow-glow transition-all duration-300">
-                          <div className="text-center p-8">
-                            <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-all duration-300">
-                              <div className="w-12 h-12 bg-primary rounded-full animate-glow group-hover:scale-110 transition-transform duration-300"></div>
+                          {projects[currentProject].title === 'Skin Check AI' ? (
+                            <div className="text-center p-8">
+                              <img 
+                                src="/images/projects/skin-check-ai-logo.png" 
+                                alt="Skin Check AI Logo"
+                                className="w-32 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300"
+                              />
+                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                              <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                {projects[currentProject].title}
+                              </p>
+                              <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Click to view demo →
+                              </p>
                             </div>
-                            <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
-                            <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
-                              {projects[currentProject].title}
-                            </p>
-                            <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              Click to view demo →
-                            </p>
-                          </div>
+                          ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
+                            <div className="text-center p-8">
+                              <img 
+                                src="/images/projects/doctai-logo.png" 
+                                alt="DoctAI Health Hub Logo"
+                                className="w-32 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300"
+                              />
+                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                              <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                {projects[currentProject].title}
+                              </p>
+                              <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Click to view demo →
+                              </p>
+                            </div>
+                          ) : (
+                            <div className="text-center p-8">
+                              <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-all duration-300">
+                                <div className="w-12 h-12 bg-primary rounded-full animate-glow group-hover:scale-110 transition-transform duration-300"></div>
+                              </div>
+                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                              <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                {projects[currentProject].title}
+                              </p>
+                              <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Click to view demo →
+                              </p>
+                            </div>
+                          )}
                         </div>
                       </a>
                     </div>
