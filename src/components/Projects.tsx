@@ -29,73 +29,53 @@ const Projects = () => {
   const projects = [
     {
       title: 'Skin Check AI',
-      description: 'AI-powered skin lesion detection application using computer vision and deep learning to assist in early dermatological diagnosis.',
-      technologies: ['Python', 'TensorFlow', 'React', 'FastAPI', 'OpenCV'],
+      description: 'AI-powered skin lesion detection mobile application using computer vision and deep learning to assist in early dermatological diagnosis.',
+      technologies: ['React Native', 'Python', 'TensorFlow', 'FastAPI', 'OpenCV'],
       category: 'AI/ML Healthcare',
       status: 'Production',
       image: 'skin-check-ai',
-      demoUrl: 'https://skin-check-ai-demo.vercel.app', // Replace with actual demo URL
-      codeUrl: 'https://github.com/FOKanu/skin-check-ai'
-     },
-     {
-       title: 'DoctAI',
-       description: 'AI-powered skin lesion detection application using computer vision and deep learning to assist in early dermatological diagnosis.',
-       technologies: ['Python', 'TensorFlow', 'React Native', 'FastAPI', 'OpenCV'],
-       category: 'AI/ML Healthcare',
-       status: 'Production',
-       image: 'medical-ai',
-       demoUrl: 'https://doctai-demo.vercel.app', // Replace with actual DoctAI demo URL
-       codeUrl: 'https://github.com/FOKanu/doctai'
+      demoUrl: 'https://github.com/FOKanu/SkinCancerCheckMobile', // Link to GitHub for demo
+      codeUrl: 'https://github.com/FOKanu/SkinCancerCheckMobile'
     },
     {
-      title: 'Personal Finance Tracker',
-      description: 'Full-stack web application for comprehensive financial management with real-time analytics and budget optimization.',
-      technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Chart.js'],
-      category: 'Full-Stack Web',
-      status: 'Active',
-      image: 'finance-app',
-      demoUrl: 'https://finance-tracker-demo.vercel.app',
-      codeUrl: 'https://github.com/FOKanu/finance-tracker'
-    },
-    {
-      title: 'Stock Price Predictor',
-      description: 'Machine learning model for financial market analysis using advanced algorithms and real-time data processing.',
-      technologies: ['Python', 'PyTorch', 'Pandas', 'Alpha Vantage API', 'Streamlit'],
-      category: 'ML/Finance',
-      status: 'Research',
-      image: 'stock-predictor',
-      demoUrl: 'https://stock-predictor-demo.streamlit.app',
-      codeUrl: 'https://github.com/FOKanu/stock-predictor'
-    },
-    {
-      title: 'Medical Image Classifier',
-      description: 'Deep learning solution for CT/MRI/EEG image recognition and classification to support medical diagnostics.',
-      technologies: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'DICOM'],
-      category: 'AI/Medical Imaging',
-      status: 'Development',
-      image: 'medical-imaging',
-      demoUrl: 'https://medical-imaging-demo.vercel.app',
-      codeUrl: 'https://github.com/FOKanu/medical-imaging'
-    },
-    {
-      title: 'Healthcare Data Pipeline',
-      description: 'Automated ETL pipeline for processing and analyzing large-scale healthcare datasets with privacy compliance.',
-      technologies: ['Python', 'Apache Airflow', 'PostgreSQL', 'Docker', 'AWS'],
-      category: 'Data Engineering',
+      title: 'DoctAI Health Hub',
+      description: 'Comprehensive healthcare platform integrating AI-powered diagnostics with patient management and telemedicine capabilities.',
+      technologies: ['React', 'Python', 'FastAPI', 'PostgreSQL', 'Docker'],
+      category: 'AI/ML Healthcare',
       status: 'Production',
-      image: 'data-pipeline',
-      demoUrl: 'https://healthcare-pipeline-demo.vercel.app',
-      codeUrl: 'https://github.com/FOKanu/healthcare-pipeline'
+      image: 'doctai-health-hub',
+      demoUrl: 'https://github.com/FOKanu/doctai-health-hub', // Link to GitHub for demo
+      codeUrl: 'https://github.com/FOKanu/doctai-health-hub'
     },
     {
-      title: 'Clinical Trial Dashboard',
-      description: 'Interactive dashboard for clinical trial data visualization and real-time monitoring of patient outcomes.',
-      technologies: ['React', 'D3.js', 'FastAPI', 'PostgreSQL', 'Docker'],
-      category: 'Healthcare Analytics',
-      status: 'Beta',
-      image: 'clinical-dashboard',
-      demoUrl: 'https://clinical-dashboard-demo.vercel.app',
-      codeUrl: 'https://github.com/FOKanu/clinical-dashboard'
+      title: 'Handwritten Image Recognition',
+      description: 'Production-ready Convolutional Neural Network (CNN) for handwritten digit recognition using MNIST dataset. Achieves 95.23% accuracy with comprehensive evaluation and visualization.',
+      technologies: ['Python', 'TensorFlow', 'Keras', 'CNN', 'MNIST', 'Jupyter'],
+      category: 'AI/ML Computer Vision',
+      status: 'Production',
+      image: 'mnist-recognition',
+      demoUrl: 'https://github.com/FOKanu/My_MNIST_Image_Classification', // Link to GitHub for demo
+      codeUrl: 'https://github.com/FOKanu/My_MNIST_Image_Classification'
+    },
+    {
+      title: 'Wealth Wise Finance',
+      description: 'Machine learning-powered financial analysis and wealth management platform with predictive analytics and portfolio optimization.',
+      technologies: ['Python', 'Machine Learning', 'Pandas', 'Scikit-learn', 'React'],
+      category: 'ML/Finance',
+      status: 'Production',
+      image: 'wealth-wise',
+      demoUrl: 'https://github.com/FOKanu/wealthwise-ml', // Link to GitHub for demo
+      codeUrl: 'https://github.com/FOKanu/wealthwise-ml'
+    },
+    {
+      title: 'NBA Performance Analytics',
+      description: 'Comprehensive NBA player performance analysis using multiple linear regression models including Ridge, Lasso, and Elastic Net regression.',
+      technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
+      category: 'ML/Sports Analytics',
+      status: 'Production',
+      image: 'nba-analytics',
+      demoUrl: 'https://github.com/FOKanu/NBA-Perfomance-Analytics-with-Linear-Regression', // Link to GitHub for demo
+      codeUrl: 'https://github.com/FOKanu/NBA-Perfomance-Analytics-with-Linear-Regression'
     }
   ];
 
