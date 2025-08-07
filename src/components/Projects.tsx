@@ -33,7 +33,9 @@ const Projects = () => {
       technologies: ['Python', 'TensorFlow', 'React', 'FastAPI', 'OpenCV'],
       category: 'AI/ML Healthcare',
       status: 'Production',
-      image: 'skin-check-ai'
+      image: 'skin-check-ai',
+      demoUrl: 'https://skin-check-ai-demo.vercel.app', // Replace with actual demo URL
+      codeUrl: 'https://github.com/FOKanu/skin-check-ai'
      },
      {
        title: 'DoctAI',
@@ -41,7 +43,9 @@ const Projects = () => {
        technologies: ['Python', 'TensorFlow', 'React Native', 'FastAPI', 'OpenCV'],
        category: 'AI/ML Healthcare',
        status: 'Production',
-       image: 'medical-ai'
+       image: 'medical-ai',
+       demoUrl: 'https://doctai-demo.vercel.app', // Replace with actual DoctAI demo URL
+       codeUrl: 'https://github.com/FOKanu/doctai'
     },
     {
       title: 'Personal Finance Tracker',
@@ -49,7 +53,9 @@ const Projects = () => {
       technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Chart.js'],
       category: 'Full-Stack Web',
       status: 'Active',
-      image: 'finance-app'
+      image: 'finance-app',
+      demoUrl: 'https://finance-tracker-demo.vercel.app',
+      codeUrl: 'https://github.com/FOKanu/finance-tracker'
     },
     {
       title: 'Stock Price Predictor',
@@ -57,7 +63,9 @@ const Projects = () => {
       technologies: ['Python', 'PyTorch', 'Pandas', 'Alpha Vantage API', 'Streamlit'],
       category: 'ML/Finance',
       status: 'Research',
-      image: 'stock-predictor'
+      image: 'stock-predictor',
+      demoUrl: 'https://stock-predictor-demo.streamlit.app',
+      codeUrl: 'https://github.com/FOKanu/stock-predictor'
     },
     {
       title: 'Medical Image Classifier',
@@ -65,7 +73,9 @@ const Projects = () => {
       technologies: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'DICOM'],
       category: 'AI/Medical Imaging',
       status: 'Development',
-      image: 'medical-imaging'
+      image: 'medical-imaging',
+      demoUrl: 'https://medical-imaging-demo.vercel.app',
+      codeUrl: 'https://github.com/FOKanu/medical-imaging'
     },
     {
       title: 'Healthcare Data Pipeline',
@@ -73,7 +83,9 @@ const Projects = () => {
       technologies: ['Python', 'Apache Airflow', 'PostgreSQL', 'Docker', 'AWS'],
       category: 'Data Engineering',
       status: 'Production',
-      image: 'data-pipeline'
+      image: 'data-pipeline',
+      demoUrl: 'https://healthcare-pipeline-demo.vercel.app',
+      codeUrl: 'https://github.com/FOKanu/healthcare-pipeline'
     },
     {
       title: 'Clinical Trial Dashboard',
@@ -81,7 +93,9 @@ const Projects = () => {
       technologies: ['React', 'D3.js', 'FastAPI', 'PostgreSQL', 'Docker'],
       category: 'Healthcare Analytics',
       status: 'Beta',
-      image: 'clinical-dashboard'
+      image: 'clinical-dashboard',
+      demoUrl: 'https://clinical-dashboard-demo.vercel.app',
+      codeUrl: 'https://github.com/FOKanu/clinical-dashboard'
     }
   ];
 
@@ -127,13 +141,13 @@ const Projects = () => {
                     {/* Project Info */}
                     <div className="space-y-6">
                       <div className="flex items-center justify-between">
-                        <Badge 
-                          variant="outline" 
+                        <Badge
+                          variant="outline"
                           className="border-primary/30 text-primary font-medium"
                         >
                           {projects[currentProject].category}
                         </Badge>
-                        <Badge 
+                        <Badge
                           variant="secondary"
                           className="bg-accent/20 text-accent"
                         >
@@ -154,8 +168,8 @@ const Projects = () => {
                         <h4 className="font-semibold text-foreground">Technologies Used:</h4>
                         <div className="flex flex-wrap gap-2">
                           {projects[currentProject].technologies.map((tech) => (
-                            <Badge 
-                              key={tech} 
+                            <Badge
+                              key={tech}
                               variant="outline"
                               className="border-secondary/30 text-secondary"
                             >
@@ -166,38 +180,51 @@ const Projects = () => {
                       </div>
 
                       <div className="flex gap-4 pt-4">
-                        <Button 
+                        <Button
                           className="bg-gradient-primary hover:shadow-glow transition-smooth"
                           asChild
                         >
-                          <a href="https://github.com/FOKanu" target="_blank" rel="noopener noreferrer">
+                          <a href={projects[currentProject].codeUrl} target="_blank" rel="noopener noreferrer">
                             <Github className="mr-2" size={18} />
                             View Code
                           </a>
                         </Button>
-                        <Button 
+                        <Button
                           variant="outline"
                           className="border-primary/30 hover:border-primary transition-smooth"
+                          asChild
                         >
-                          <ExternalLink className="mr-2" size={18} />
-                          Live Demo
+                          <a href={projects[currentProject].demoUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-2" size={18} />
+                            Live Demo
+                          </a>
                         </Button>
                       </div>
                     </div>
 
                     {/* Project Visual */}
                     <div className="relative">
-                      <div className="aspect-video bg-gradient-card rounded-lg border border-border/50 flex items-center justify-center">
-                        <div className="text-center p-8">
-                          <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <div className="w-12 h-12 bg-primary rounded-full animate-glow"></div>
+                      <a
+                        href={projects[currentProject].demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block cursor-pointer group"
+                      >
+                        <div className="aspect-video bg-gradient-card rounded-lg border border-border/50 flex items-center justify-center group-hover:border-primary/50 group-hover:shadow-glow transition-all duration-300">
+                          <div className="text-center p-8">
+                            <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-all duration-300">
+                              <div className="w-12 h-12 bg-primary rounded-full animate-glow group-hover:scale-110 transition-transform duration-300"></div>
+                            </div>
+                            <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                            <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                              {projects[currentProject].title}
+                            </p>
+                            <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Click to view demo →
+                            </p>
                           </div>
-                          <p className="text-muted-foreground">Project Preview</p>
-                          <p className="text-sm text-muted-foreground/70 mt-2">
-                            {projects[currentProject].title}
-                          </p>
                         </div>
-                      </div>
+                      </a>
                     </div>
                   </div>
                 </CardContent>
@@ -221,8 +248,8 @@ const Projects = () => {
                 key={index}
                 onClick={() => setCurrentProject(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentProject 
-                    ? 'bg-primary shadow-glow' 
+                  index === currentProject
+                    ? 'bg-primary shadow-glow'
                     : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
                 }`}
               />
@@ -234,7 +261,7 @@ const Projects = () => {
         <div className={`text-center mt-16 transition-all duration-1000 delay-500 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <Button 
+          <Button
             size="lg"
             variant="outline"
             className="border-primary/30 hover:border-primary hover:shadow-glow transition-smooth"
