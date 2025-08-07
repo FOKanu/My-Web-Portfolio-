@@ -208,11 +208,9 @@ const Projects = () => {
                             </div>
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
                             <div className="text-center p-8">
-                              <img 
-                                src="/images/projects/doctai-logo.png" 
-                                alt="DoctAI Health Hub Logo"
-                                className="w-40 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300 rounded-lg"
-                              />
+                              <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-all duration-300">
+                                <div className="w-12 h-12 bg-primary rounded-full animate-glow group-hover:scale-110 transition-transform duration-300"></div>
+                              </div>
                               <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
                               <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
                                 {projects[currentProject].title}
