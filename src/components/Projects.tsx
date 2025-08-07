@@ -30,7 +30,7 @@ const Projects = () => {
     {
       title: 'Skin Check AI',
       description: 'AI-powered skin lesion detection mobile application using computer vision and deep learning to assist in early dermatological diagnosis.',
-      technologies: ['React Native', 'Python', 'TensorFlow', 'FastAPI', 'OpenCV'],
+      technologies: ['React Native', 'Expo', 'Supabase', 'TensorFlow', 'OpenCV', 'React Navigation', 'Expo Camera', 'React Native Calendars'],
       category: 'AI/ML Healthcare',
       status: 'Production',
       image: 'skin-check-ai',
@@ -40,7 +40,7 @@ const Projects = () => {
     {
       title: 'DoctAI Health Hub',
       description: 'Comprehensive healthcare platform integrating AI-powered diagnostics with patient management and telemedicine capabilities.',
-      technologies: ['React', 'Python', 'FastAPI', 'PostgreSQL', 'Docker'],
+      technologies: ['React', 'TypeScript', 'Vite', 'Supabase', 'Radix UI', 'Tailwind CSS', 'React Query', 'React Hook Form', 'Zod', 'Playwright', 'Jest'],
       category: 'AI/ML Healthcare',
       status: 'Production',
       image: 'doctai-health-hub',
@@ -50,7 +50,7 @@ const Projects = () => {
     {
       title: 'Handwritten Image Recognition',
       description: 'Production-ready Convolutional Neural Network (CNN) for handwritten digit recognition using MNIST dataset. Achieves 95.23% accuracy with comprehensive evaluation and visualization.',
-      technologies: ['Python', 'TensorFlow', 'Keras', 'CNN', 'MNIST', 'Jupyter'],
+      technologies: ['Python', 'TensorFlow', 'Keras', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'Jupyter', 'Flask', 'Plotly'],
       category: 'AI/ML Computer Vision',
       status: 'Production',
       image: 'mnist-recognition',
@@ -60,7 +60,7 @@ const Projects = () => {
     {
       title: 'Wealth Wise Finance',
       description: 'Machine learning-powered financial analysis and wealth management platform with predictive analytics and portfolio optimization.',
-      technologies: ['Python', 'Machine Learning', 'Pandas', 'Scikit-learn', 'React'],
+      technologies: ['React', 'TypeScript', 'React Native', 'Electron', 'XGBoost', 'LightGBM', 'Scikit-learn', 'YFinance', 'Pandas', 'NumPy', 'Optuna', 'Supabase', 'Framer Motion'],
       category: 'ML/Finance',
       status: 'Production',
       image: 'wealth-wise',
@@ -70,7 +70,7 @@ const Projects = () => {
     {
       title: 'NBA Performance Analytics',
       description: 'Comprehensive NBA player performance analysis using multiple linear regression models including Ridge, Lasso, and Elastic Net regression.',
-      technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
+      technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Streamlit', 'Plotly', 'Pytest', 'Jupyter', 'Black', 'Flake8', 'MyPy'],
       category: 'ML/Sports Analytics',
       status: 'Production',
       image: 'nba-analytics',
