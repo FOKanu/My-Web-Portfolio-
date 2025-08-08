@@ -23,7 +23,7 @@ const Hero = () => {
         backgroundImage: `linear-gradient(rgba(15, 25, 45, 0.8), rgba(15, 25, 45, 0.6)), url(${heroImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundAttachment: typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches ? 'scroll' : 'fixed'
       }}
     >
       {/* Animated Background Elements */}
@@ -86,7 +86,7 @@ const Hero = () => {
               className="rounded-full border-primary/30 hover:border-primary hover:shadow-glow transition-smooth"
               asChild
             >
-              <a href="https://github.com/FOKanu" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/FOKanu" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
                 <Github size={20} />
               </a>
             </Button>
@@ -97,7 +97,7 @@ const Hero = () => {
               className="rounded-full border-primary/30 hover:border-primary hover:shadow-glow transition-smooth"
               asChild
             >
-              <a href="https://www.linkedin.com/in/francis-okore-426b081a3" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/francis-okore-426b081a3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
                 <Linkedin size={20} />
               </a>
             </Button>
@@ -108,7 +108,7 @@ const Hero = () => {
               className="rounded-full border-primary/30 hover:border-primary hover:shadow-glow transition-smooth"
               asChild
             >
-              <a href="mailto:Francis.Okorie.IK@gmail.com">
+              <a href="mailto:Francis.Okorie.IK@gmail.com" aria-label="Send email to Francis Kanu">
                 <Mail size={20} />
               </a>
             </Button>

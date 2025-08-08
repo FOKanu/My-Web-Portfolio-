@@ -18,7 +18,7 @@ const Navigation = () => {
     { name: 'Languages', href: '#languages' },
     { name: 'Interests', href: '#interests' },
     { name: 'Contact', href: '#contact' }
-  ];
+  ] as const;
 
   useEffect(() => {
     // Fade-in animation on mount
@@ -72,7 +72,8 @@ const Navigation = () => {
             <Avatar className="w-10 h-10 sm:w-12 sm:h-12 ring-2 ring-cyan-400/50">
               <AvatarImage 
                 src="/lovable-uploads/67c0f36c-9a89-489b-bfb6-4df41af44461.png" 
-                alt="Francis Kanu"
+                alt="Portrait of Francis Kanu"
+                loading="lazy"
                 className="object-cover"
               />
               <AvatarFallback className="bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold">
@@ -97,6 +98,7 @@ const Navigation = () => {
                           : 'text-foreground/80 hover:text-primary hover:bg-primary/10'
                       }`}
                       style={{ minWidth: 'fit-content' }}
+                      aria-current={isActive ? 'page' : undefined}
                     >
                       {item.name}
                       

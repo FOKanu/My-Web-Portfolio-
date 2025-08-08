@@ -3,6 +3,7 @@ import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { projects as projectData } from '@/data/projects';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,58 +27,7 @@ const Projects = () => {
     return () => observer.disconnect();
   }, []);
 
-  const projects = [
-    {
-      title: 'Skin Check AI',
-      description: 'AI-powered skin lesion detection mobile application using computer vision and deep learning to assist in early dermatological diagnosis.',
-      technologies: ['React Native', 'Expo', 'Supabase', 'TensorFlow', 'OpenCV', 'React Navigation', 'Expo Camera', 'React Native Calendars'],
-      category: 'AI/ML Healthcare',
-      status: 'Production',
-      image: 'skin-check-ai',
-      demoUrl: 'https://github.com/FOKanu/SkinCancerCheckMobile', // Link to GitHub for demo
-      codeUrl: 'https://github.com/FOKanu/SkinCancerCheckMobile'
-    },
-    {
-      title: 'DoctAI Health Hub',
-      description: 'Comprehensive healthcare platform integrating AI-powered diagnostics with patient management and telemedicine capabilities.',
-      technologies: ['React', 'TypeScript', 'Vite', 'Supabase', 'Radix UI', 'Tailwind CSS', 'React Query', 'React Hook Form', 'Zod', 'Playwright', 'Jest'],
-      category: 'AI/ML Healthcare',
-      status: 'Production',
-      image: 'doctai-health-hub',
-      demoUrl: 'https://github.com/FOKanu/doctai-health-hub', // Link to GitHub for demo
-      codeUrl: 'https://github.com/FOKanu/doctai-health-hub'
-    },
-    {
-      title: 'Handwritten Image Recognition',
-      description: 'Production-ready Convolutional Neural Network (CNN) for handwritten digit recognition using MNIST dataset. Achieves 95.23% accuracy with comprehensive evaluation and visualization.',
-      technologies: ['Python', 'TensorFlow', 'Keras', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'Jupyter', 'Flask', 'Plotly'],
-      category: 'AI/ML Computer Vision',
-      status: 'Production',
-      image: 'mnist-recognition',
-      demoUrl: 'https://github.com/FOKanu/My_MNIST_Image_Classification', // Link to GitHub for demo
-      codeUrl: 'https://github.com/FOKanu/My_MNIST_Image_Classification'
-    },
-    {
-      title: 'Wealth Wise Finance',
-      description: 'Machine learning-powered financial analysis and wealth management platform with predictive analytics and portfolio optimization.',
-      technologies: ['React', 'TypeScript', 'React Native', 'Electron', 'XGBoost', 'LightGBM', 'Scikit-learn', 'YFinance', 'Pandas', 'NumPy', 'Optuna', 'Supabase', 'Framer Motion'],
-      category: 'ML/Finance',
-      status: 'Production',
-      image: 'wealth-wise',
-      demoUrl: 'https://github.com/FOKanu/wealthwise-ml', // Link to GitHub for demo
-      codeUrl: 'https://github.com/FOKanu/wealthwise-ml'
-    },
-    {
-      title: 'NBA Performance Analytics',
-      description: 'Comprehensive NBA player performance analysis using multiple linear regression models including Ridge, Lasso, and Elastic Net regression.',
-      technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Streamlit', 'Plotly', 'Pytest', 'Jupyter', 'Black', 'Flake8', 'MyPy'],
-      category: 'ML/Sports Analytics',
-      status: 'Production',
-      image: 'nba-analytics',
-      demoUrl: 'https://github.com/FOKanu/NBA-Perfomance-Analytics-with-Linear-Regression', // Link to GitHub for demo
-      codeUrl: 'https://github.com/FOKanu/NBA-Perfomance-Analytics-with-Linear-Regression'
-    }
-  ];
+  const projects = projectData;
 
   const nextProject = () => {
     setCurrentProject((prev) => (prev + 1) % projects.length);
@@ -144,7 +94,7 @@ const Projects = () => {
                         </p>
                       </div>
 
-                      <div className="space-y-3">
+                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground">Technologies Used:</h4>
                         <div className="flex flex-wrap gap-2">
                           {projects[currentProject].technologies.map((tech) => (
@@ -157,6 +107,9 @@ const Projects = () => {
                             </Badge>
                           ))}
                         </div>
+                         {projects[currentProject].metric && (
+                           <p className="text-sm text-muted-foreground">{projects[currentProject].metric}</p>
+                         )}
                       </div>
 
                       <div className="flex gap-4 pt-4">
@@ -179,6 +132,13 @@ const Projects = () => {
                             Live Demo
                           </a>
                         </Button>
+                        <Button
+                          variant="secondary"
+                          className="ml-2"
+                          asChild
+                        >
+                          <a href={`/projects/${projects[currentProject].slug}`}>View case study</a>
+                        </Button>
                       </div>
                     </div>
 
@@ -195,8 +155,9 @@ const Projects = () => {
                             <div className="text-center p-8">
                               <img 
                                 src="/images/projects/skin-check-ai-logo.png" 
-                                alt="Skin Check AI Logo"
+                                alt="Skin Check AI project logo"
                                 className="w-32 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300"
+                                loading="lazy"
                               />
                               <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
                               <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
@@ -210,8 +171,9 @@ const Projects = () => {
                             <div className="text-center p-8">
                               <img 
                                 src="/images/projects/doctai-logo.png" 
-                                alt="DoctAI Health Hub Logo"
+                                alt="DoctAI Health Hub project logo"
                                 className="w-40 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300 rounded-lg"
+                                loading="lazy"
                               />
                               <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
                               <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">

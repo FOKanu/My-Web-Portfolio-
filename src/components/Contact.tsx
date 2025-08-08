@@ -5,15 +5,27 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+  const formSchema = z.object({
+    name: z.string().min(2, 'Name is too short'),
+    email: z.string().email('Enter a valid email'),
+    subject: z.string().min(3, 'Please add a subject'),
+    message: z.string().min(10, 'Message is too short'),
   });
+
+  type FormValues = z.infer<typeof formSchema>;
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>({ resolver: zodResolver(formSchema) });
   const sectionRef = useRef<HTMLElement>(null);
   const { toast } = useToast();
 
@@ -34,30 +46,13 @@ const Contact = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Create mailto link with form data
-    const mailtoLink = `mailto:Francis.Okorie.IK@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+  const onSubmit = (values: FormValues) => {
+    const mailtoLink = `mailto:Francis.Okorie.IK@gmail.com?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent(
+      `Name: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`
     )}`;
-    
     window.location.href = mailtoLink;
-    
-    toast({
-      title: "Message Prepared",
-      description: "Your email client should open with the message ready to send.",
-    });
-
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    toast({ title: 'Message prepared', description: 'Your email client will open with the message.' });
+    reset();
   };
 
   const contactInfo = [
@@ -189,7 +184,7 @@ const Contact = () => {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-gradient mb-6">Send a Message</h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -199,12 +194,12 @@ const Contact = () => {
                         id="name"
                         name="name"
                         type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
+                        aria-invalid={!!errors.name}
+                        {...register('name')}
                         className="bg-background/50 border-border/50 focus:border-primary transition-smooth"
                         placeholder="Enter your name"
                       />
+                      {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>}
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
@@ -214,12 +209,12 @@ const Contact = () => {
                         id="email"
                         name="email"
                         type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
+                        aria-invalid={!!errors.email}
+                        {...register('email')}
                         className="bg-background/50 border-border/50 focus:border-primary transition-smooth"
                         placeholder="Enter your email"
                       />
+                      {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>}
                     </div>
                   </div>
 
@@ -231,12 +226,12 @@ const Contact = () => {
                       id="subject"
                       name="subject"
                       type="text"
-                      required
-                      value={formData.subject}
-                      onChange={handleInputChange}
+                      aria-invalid={!!errors.subject}
+                      {...register('subject')}
                       className="bg-background/50 border-border/50 focus:border-primary transition-smooth"
                       placeholder="What's this about?"
                     />
+                    {errors.subject && <p className="text-sm text-red-500 mt-1">{errors.subject.message}</p>}
                   </div>
 
                   <div>
@@ -246,22 +241,23 @@ const Contact = () => {
                     <Textarea
                       id="message"
                       name="message"
-                      required
                       rows={6}
-                      value={formData.message}
-                      onChange={handleInputChange}
+                      aria-invalid={!!errors.message}
+                      {...register('message')}
                       className="bg-background/50 border-border/50 focus:border-primary transition-smooth resize-none"
                       placeholder="Tell me about your project or opportunity..."
                     />
+                    {errors.message && <p className="text-sm text-red-500 mt-1">{errors.message.message}</p>}
                   </div>
 
                   <Button 
                     type="submit"
                     size="lg"
                     className="w-full bg-gradient-primary hover:shadow-glow transition-smooth"
+                    disabled={isSubmitting}
                   >
                     <Send className="mr-2" size={18} />
-                    Send Message
+                    {isSubmitting ? 'Sending…' : 'Send Message'}
                   </Button>
                 </form>
 

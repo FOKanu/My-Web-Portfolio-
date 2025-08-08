@@ -28,16 +28,24 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] bg-primary text-primary-foreground px-4 py-2 rounded"
+      >
+        Skip to content
+      </a>
       <Navigation />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Education />
-      <Languages />
-      <Interests />
-      <Contact />
+      <main id="main">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Education />
+        <Languages />
+        <Interests />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );
