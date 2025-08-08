@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -115,6 +116,7 @@ const Navigation = () => {
               <ScrollBar orientation="horizontal" className="invisible" />
             </ScrollArea>
           </div>
+          <ThemeToggle />
         </div>
       </div>
     </nav>
