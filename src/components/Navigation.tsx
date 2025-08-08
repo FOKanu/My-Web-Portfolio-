@@ -71,11 +71,11 @@ const Navigation = () => {
             <Avatar className="w-10 h-10 sm:w-12 sm:h-12 ring-2 ring-cyan-400/50">
               <AvatarImage 
                 src="/lovable-uploads/67c0f36c-9a89-489b-bfb6-4df41af44461.png" 
-                alt="Francis I.K."
+                alt="Francis Kanu"
                 className="object-cover"
               />
               <AvatarFallback className="bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold">
-                FIK
+                FK
               </AvatarFallback>
             </Avatar>
           </div>

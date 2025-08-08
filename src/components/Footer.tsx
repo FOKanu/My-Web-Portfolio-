@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Branding */}
           <div className="text-center md:text-left">
-            <div className="text-2xl font-bold text-gradient mb-2">Francis I.K.</div>
+            <div className="text-2xl font-bold text-gradient mb-2">Francis Kanu</div>
             <p className="text-muted-foreground">
               Medical Scientist & Full Stack Engineer
             </p>
@@ -88,7 +88,7 @@ const Footer = () => {
         <div className="border-t border-border/30 mt-8 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © {currentYear} Francis I.K. All rights reserved.
+              © {currentYear} Francis Kanu All rights reserved.
             </p>
             
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
