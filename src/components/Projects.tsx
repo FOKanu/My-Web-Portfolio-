@@ -37,6 +37,14 @@ const Projects = () => {
     setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'ArrowLeft') {
+      prevProject();
+    } else if (e.key === 'ArrowRight') {
+      nextProject();
+    }
+  };
+
   return (
     <section ref={sectionRef} id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -51,7 +59,14 @@ const Projects = () => {
         </div>
 
         {/* Project Carousel */}
-        <div className="relative max-w-6xl mx-auto">
+        <div
+          className="relative max-w-6xl mx-auto"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Featured projects carousel"
+          tabIndex={0}
+          onKeyDown={handleKeyDown}
+        >
           <div className="flex items-center justify-center gap-8">
             <Button
               variant="outline"
@@ -97,7 +112,7 @@ const Projects = () => {
                        <div className="space-y-3">
                         <h4 className="font-semibold text-foreground">Technologies Used:</h4>
                         <div className="flex flex-wrap gap-2">
-                          {projects[currentProject].technologies.map((tech) => (
+                          {projects[currentProject].technologies.slice(0, 6).map((tech) => (
                             <Badge
                               key={tech}
                               variant="outline"

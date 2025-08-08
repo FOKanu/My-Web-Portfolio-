@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { getProjectBySlug } from '@/data/projects';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -7,6 +8,33 @@ const ProjectDetail = () => {
   const params = useParams();
   const slug = params.slug as string;
   const project = getProjectBySlug(slug);
+
+  useEffect(() => {
+    if (project) {
+      document.title = `${project.title} — Case Study | Francis Kanu`;
+      const meta = document.querySelector('meta[name="description"]');
+      const desc = project.description.slice(0, 155);
+      if (meta) {
+        meta.setAttribute('content', desc);
+      } else {
+        const m = document.createElement('meta');
+        m.name = 'description';
+        m.content = desc;
+        document.head.appendChild(m);
+      }
+    }
+  }, [project]);
+
+  const projectJsonLd = project ? {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    name: project.title,
+    description: project.description,
+    url: typeof window !== 'undefined' ? window.location.href : '',
+    codeRepository: project.codeUrl,
+    programmingLanguage: project.technologies?.slice(0, 6),
+    keywords: project.technologies?.join(', '),
+  } : null;
 
   if (!project) {
     return (
@@ -44,6 +72,13 @@ const ProjectDetail = () => {
           <a className="underline text-primary" href={project.codeUrl} target="_blank" rel="noreferrer">View code</a>
           <a className="underline text-primary" href={project.demoUrl} target="_blank" rel="noreferrer">Live demo</a>
         </div>
+
+        {projectJsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+          />
+        )}
       </main>
       <Footer />
     </div>

@@ -66,8 +66,8 @@ const About = () => {
                   Download CV
                 </a>
               </Button>
-              <Button variant="outline" className="border-primary/30 hover:border-primary transition-smooth">
-                View Projects
+              <Button variant="outline" className="border-primary/30 hover:border-primary transition-smooth" asChild>
+                <a href="#projects" aria-label="View projects">View Projects</a>
               </Button>
             </div>
           </div>
