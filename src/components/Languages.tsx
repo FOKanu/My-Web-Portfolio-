@@ -85,7 +85,7 @@ const Languages = () => {
 
   return (
     <section ref={sectionRef} id="languages" className="relative overflow-hidden py-20 bg-muted/30">
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         <img
           src={digitalGlobe}
           alt="Digital globe network background"
@@ -94,7 +94,7 @@ const Languages = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/90" />
       </div>
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
