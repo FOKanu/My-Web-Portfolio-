@@ -8,6 +8,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import contactBg from '@/assets/skills-bg.jpg';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -87,7 +88,16 @@ const Contact = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="contact" className="py-20 bg-muted/30">
+    <section ref={sectionRef} id="contact" className="relative overflow-hidden py-20 bg-muted/30">
+      <div className="absolute inset-0 -z-10">
+        <img
+          src={contactBg}
+          alt="Abstract network background for contact section"
+          className="w-full h-full object-cover opacity-20"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/90" />
+      </div>
       <div className="container mx-auto px-6">
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'

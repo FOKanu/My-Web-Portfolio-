@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Calendar, MapPin, Building2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import experienceBg from '@/assets/hero-bg.jpg';
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -73,7 +74,16 @@ const Experience = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 bg-muted/30">
+    <section ref={sectionRef} id="experience" className="relative overflow-hidden py-20 bg-muted/30">
+      <div className="absolute inset-0 -z-10">
+        <img
+          src={experienceBg}
+          alt="Abstract professional experience background"
+          className="w-full h-full object-cover opacity-25"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/90" />
+      </div>
       <div className="container mx-auto px-6">
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
