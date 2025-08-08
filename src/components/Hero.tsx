@@ -62,9 +62,21 @@ const Hero = () => {
           <Button 
             size="lg" 
             className="bg-gradient-primary hover:shadow-glow transition-smooth text-lg px-8 py-4 rounded-full"
+            asChild
           >
-            <Download className="mr-2" size={20} />
-            Download CV
+            <a href="/cv/francis-kanu-cv.pdf" download aria-label="Download Francis Kanu CV (PDF)">
+              <Download className="mr-2" size={20} />
+              Download CV
+            </a>
+          </Button>
+          
+          <Button
+            size="lg"
+            variant="secondary"
+            className="hover:shadow-glow transition-smooth text-lg px-8 py-4 rounded-full"
+            asChild
+          >
+            <a href="#contact" aria-label="Contact Francis Kanu">Contact me</a>
           </Button>
           
           <div className="flex gap-4">

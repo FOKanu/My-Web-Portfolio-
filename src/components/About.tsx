@@ -60,9 +60,11 @@ const About = () => {
             </Card>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-gradient-primary hover:shadow-glow transition-smooth">
-                <Download className="mr-2" size={18} />
-                Download CV
+              <Button className="bg-gradient-primary hover:shadow-glow transition-smooth" asChild>
+                <a href="/cv/francis-kanu-cv.pdf" download aria-label="Download Francis Kanu CV (PDF)">
+                  <Download className="mr-2" size={18} />
+                  Download CV
+                </a>
               </Button>
               <Button variant="outline" className="border-primary/30 hover:border-primary transition-smooth">
                 View Projects
