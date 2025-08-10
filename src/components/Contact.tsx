@@ -48,7 +48,7 @@ const Contact = () => {
   }, []);
 
   const onSubmit = (values: FormValues) => {
-    const mailtoLink = `mailto:Francis.Okorie.IK@gmail.com?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:francis.okorie.ik@gmail.com?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent(
       `Name: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`
     )}`;
     window.location.href = mailtoLink;
@@ -60,8 +60,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'Francis.Okorie.IK@gmail.com',
-      href: 'mailto:Francis.Okorie.IK@gmail.com',
+      value: 'francis.okorie.ik@gmail.com',
+      href: 'mailto:francis.okorie.ik@gmail.com',
       color: 'text-primary'
     },
     {
