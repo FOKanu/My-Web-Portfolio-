@@ -68,7 +68,7 @@ const Footer = () => {
               className="rounded-full hover:bg-primary/10 hover:text-primary transition-smooth"
               asChild
             >
-              <a href="https://www.linkedin.com/in/francis-okore-426b081a3" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/francis-okorie-i-k-817254286" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={20} />
               </a>
             </Button>
