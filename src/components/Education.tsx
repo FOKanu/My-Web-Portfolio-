@@ -30,7 +30,7 @@ const Education = () => {
       institution: 'Le Wagon',
       location: 'Berlin, Germany',
       period: '2025',
-      status: 'Current',
+      status: 'Completed',
       description: 'Intensive program covering machine learning, deep learning, data engineering, and AI applications in real-world scenarios.',
       highlights: ['Python & Machine Learning', 'Deep Learning with TensorFlow/PyTorch', 'Data Engineering & MLOps', 'AI Product Development'],
       type: 'Bootcamp'
