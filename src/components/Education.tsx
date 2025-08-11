@@ -39,7 +39,7 @@ const Education = () => {
       degree: 'MBBS (Bachelor of Medicine, Bachelor of Surgery)',
       institution: 'V.N. Karazina Kharkiv National University',
       location: 'Kharkiv, Ukraine',
-      period: '2017 - 2022',
+      period: '2016 - 2022',
       status: '4th Year Completed',
       description: 'Comprehensive medical education covering human anatomy, physiology, pathology, pharmacology, and clinical medicine.',
       highlights: ['Clinical Medicine', 'Medical Research', 'Patient Care', 'Medical Ethics', 'Diagnostic Procedures'],
