@@ -63,6 +63,15 @@ const Experience = () => {
       skills: ['Data Analysis', 'Healthcare Analytics', 'Report Generation', 'Statistical Analysis']
     },
     {
+      title: 'Student Counseling / Culture Exposure',
+      company: 'Kharkov National Youth Council (Connect Man)',
+      location: 'Kharkiv, Ukraine',
+      period: 'Jun 2018 - Sep 2019',
+      type: 'Part-time, Volunteer',
+      description: 'Provided support for academically struggling and emotionally distressed high-school students, offering guidance, emotional support, and career advice on study direction.',
+      skills: ['Youth Counseling', 'Emotional Support', 'Academic Guidance', 'Career Advising', 'Mentorship']
+    },
+    {
       title: 'ESL Instructor',
       company: 'SkyEng',
       location: 'Online',
@@ -70,6 +79,24 @@ const Experience = () => {
       type: 'Online',
       description: 'Taught English as a Second Language to international students. Developed strong communication, teaching, and cross-cultural skills.',
       skills: ['Teaching', 'Cross-cultural Communication', 'Curriculum Development', 'Online Education']
+    },
+    {
+      title: 'Secretarial and Administrative Assistance',
+      company: 'Berean Hope NGO',
+      location: 'Accra, Ghana',
+      period: 'Sep 2014 - Sep 2016',
+      type: 'Volunteer',
+      description: 'Managed donor communications and led a prisons outreach program delivering professional skills to inmates to reduce re-offending.',
+      skills: ['Donor Relations', 'Program Coordination', 'Community Outreach', 'Communication', 'Training Facilitation']
+    },
+    {
+      title: 'Clinical Administrative Secretariat',
+      company: 'Korle-Bu Teaching Hospital, Department of Child Health',
+      location: 'Accra, Ghana',
+      period: 'Oct 2013 - Aug 2016',
+      type: 'Administrative',
+      description: 'Facilitated communication between clinical staff and patients; managed appointments, operating room schedules, follow-ups, and referrals to ensure seamless operations.',
+      skills: ['Clinical Coordination', 'Patient Relations', 'Appointment Scheduling', 'OR Scheduling', 'Referrals Management']
     }
   ];
 
