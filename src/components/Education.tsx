@@ -49,7 +49,7 @@ const Education = () => {
       degree: 'Bachelor of Arts in Education & Literature',
       institution: 'University of Ghana',
       location: 'Accra, Ghana',
-      period: '2013 - 2017',
+      period: '2012 - 2016',
       status: 'Completed',
       description: 'Interdisciplinary program combining educational theory, literary analysis, and critical thinking skills.',
       highlights: ['Educational Psychology', 'Literary Analysis', 'Research Methods', 'Cross-cultural Studies'],
