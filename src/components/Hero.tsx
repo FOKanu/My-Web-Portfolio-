@@ -44,9 +44,9 @@ const Hero = () => {
         <div className={`text-2xl md:text-3xl mb-4 transition-all duration-1000 delay-300 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <span className="text-primary font-semibold">Medical Scientist</span>
+          <span className="text-primary font-semibold">Data Scientist</span>
           <span className="text-muted-foreground mx-4">|</span>
-          <span className="text-secondary font-semibold">Full Stack Engineer</span>
+          <span className="text-secondary font-semibold">Software Engineer (Fullstack)</span>
         </div>
 
         <p className={`text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto transition-all duration-1000 delay-500 ${
