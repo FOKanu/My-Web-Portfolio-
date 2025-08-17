@@ -38,12 +38,13 @@ export const projects: Project[] = [
     slug: 'doctai-health-hub',
     title: 'DoctAI Health Hub',
     description:
-      'Comprehensive healthcare platform integrating AI-powered diagnostics with patient management and telemedicine capabilities.',
+      'Comprehensive healthcare platform integrating AI-powered diagnostics with patient management and telemedicine capabilities. Features an ensemble of machine learning algorithms for enhanced diagnostic accuracy.',
     technologies: [
       'React',
       'TypeScript',
       'Vite',
       'Supabase',
+      'PyTorch',
       'Radix UI',
       'Tailwind CSS',
       'React Query',
