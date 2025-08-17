@@ -80,7 +80,7 @@ const About = () => {
               <Card className="card-professional hover-lift">
                 <CardContent className="p-6 text-center">
                   <div className="text-3xl font-bold text-primary mb-2">14+</div>
-                  <div className="text-sm text-muted-foreground">Years in Healthcare</div>
+                  <div className="text-sm text-muted-foreground">of Diverse Professional Experience</div>
                 </CardContent>
               </Card>
 
