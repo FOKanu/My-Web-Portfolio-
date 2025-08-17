@@ -44,16 +44,17 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-gradient mb-6">Professional Journey</h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    With <span className="text-primary font-semibold">14+ years</span> of experience in healthcare and administration, 
+                    With <span className="text-primary font-semibold">14+ years</span> combined professional experience spanning healthcare, hospitality and ESL, 
                     I've successfully transitioned into the exciting world of data science and full-stack development.
                   </p>
                   <p>
-                    My unique background combines deep medical knowledge with cutting-edge technology skills, 
-                    allowing me to build innovative solutions that bridge the gap between healthcare and technology.
+                    My diverse background combines operational excellence, leadership experience, and deep understanding of 
+                    human-centered service delivery with cutting-edge technology skills, allowing me to build innovative solutions 
+                    that bridge multiple industries and solve complex challenges.
                   </p>
                   <p>
                     Currently based in <span className="text-accent font-semibold">Berlin</span> with an EU work permit, 
-                    I'm passionate about leveraging AI and machine learning to solve real-world healthcare challenges.
+                    I'm passionate about leveraging AI and machine learning to transform business processes and create meaningful impact.
                   </p>
                 </div>
               </CardContent>
