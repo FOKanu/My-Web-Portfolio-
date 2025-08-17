@@ -91,11 +91,6 @@ const Footer = () => {
               © {currentYear} Francis Kanu All rights reserved.
             </p>
             
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>Built with</span>
-              <Heart size={16} className="text-red-500" />
-              <span>using React, TypeScript, and Tailwind CSS</span>
-            </div>
             
             <button 
               onClick={scrollToTop}
