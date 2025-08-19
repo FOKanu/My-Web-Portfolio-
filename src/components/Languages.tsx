@@ -56,7 +56,7 @@ const Languages = () => {
       proficiency: 'Advanced',
       flag: '🇬🇭',
       note: 'Native Ghanaian language',
-      color: 'text-primary-glow'
+      color: 'text-secondary'
     },
     {
       name: 'Dagomba',
