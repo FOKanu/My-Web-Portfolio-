@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import experienceBg from '@/assets/hero-bg.jpg';
 
 const Experience = () => {
+  console.log('Experience component is rendering');
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
