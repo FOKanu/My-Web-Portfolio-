@@ -27,76 +27,76 @@ const Experience = () => {
 
   const experiences = [
     {
-      title: 'Front Office Agent',
-      company: 'Innside by Meliá',
+      title: 'Front Office and Reservations Agent',
+      company: 'INNSiDE by Meliá Berlin Mitte',
       location: 'Berlin, Germany',
-      period: '2023 - 2025',
+      period: 'Sep 2023 — Jan 2025',
       type: 'Full-time',
-      description: 'Managed front desk operations, guest relations, and administrative tasks in a luxury hotel environment. Developed strong customer service and multilingual communication skills.',
-      skills: ['Customer Service', 'Multilingual Communication', 'Problem Solving', 'Team Leadership']
+      description: 'Delivered exceptional guest services through professional check-in, check-out, and concierge support. Handled reservations and managed booking systems to maximize efficiency. Resolved guest concerns with empathy and speed, ensuring high satisfaction. Collaborated with housekeeping, events, and sales departments to maintain smooth daily operations. Supported administrative tasks including billing, reporting, and database entry.',
+      skills: ['Guest Services', 'Reservation Management', 'Problem Resolution', 'Interdepartmental Coordination', 'Administrative Support']
     },
     {
-      title: 'Event Agent',
-      company: 'Soho House Berlin',
+      title: 'Event Service Agent',
+      company: 'Soho House',
       location: 'Berlin, Germany',
-      period: '2022',
+      period: 'Apr 2022 — Nov 2022',
       type: 'Contract',
-      description: 'Coordinated high-end events and provided exceptional service to exclusive clientele. Enhanced project management and attention to detail skills.',
-      skills: ['Event Management', 'Client Relations', 'Project Coordination', 'Attention to Detail']
+      description: 'Assisted in planning and executing events, ensuring smooth setup and guest experience. Coordinated logistics between catering, operations, and client teams. Provided on-site guest support and troubleshooting during events. Ensured high service standards were met across private and corporate functions.',
+      skills: ['Event Planning', 'Logistics Coordination', 'Guest Support', 'Service Standards', 'Troubleshooting']
     },
     {
-      title: 'Medical Billing Specialist',
+      title: 'Medical Billing and Collections Specialist',
       company: 'Billing Nerds',
-      location: 'Remote',
-      period: '2021 - 2022',
+      location: 'Brooklyn, New York, USA',
+      period: 'Mar 2021 — Feb 2022',
       type: 'Remote',
-      description: 'Processed medical billing and insurance claims with high accuracy. Gained expertise in healthcare administration and data management systems.',
-      skills: ['Medical Billing', 'Insurance Processing', 'Data Management', 'Healthcare Systems']
+      description: 'Processed medical billing claims and managed account receivables for healthcare clients. Verified insurance information and ensured compliance with medical coding standards. Communicated with patients and insurers to resolve outstanding balances. Improved billing accuracy and reduced rejected claims through detailed review.',
+      skills: ['Medical Billing', 'Insurance Verification', 'Compliance Management', 'Patient Communication', 'Claims Processing']
     },
     {
       title: 'Telemetric Data Analyst',
-      company: 'Glutality',
-      location: 'Remote',
-      period: '2019 - 2021',
+      company: 'Glutality Inc',
+      location: 'Boca Raton, Florida, USA',
+      period: '2019 — 2021',
       type: 'Remote',
-      description: 'Analyzed telemetric data for healthcare applications. Developed analytical skills and experience with data processing and interpretation.',
-      skills: ['Data Analysis', 'Healthcare Analytics', 'Report Generation', 'Statistical Analysis']
+      description: 'Analyzed telemetric patient health data to support medical decision-making. Collaborated with clinical teams to identify irregularities and escalate cases. Produced detailed analytical reports for doctors and stakeholders. Maintained data accuracy and integrity across health monitoring platforms.',
+      skills: ['Data Analysis', 'Clinical Collaboration', 'Report Generation', 'Data Integrity', 'Health Monitoring']
     },
     {
-      title: 'Student Counseling / Culture Exposure',
-      company: 'Kharkov National Youth Council (Connect Man)',
+      title: 'ESL Teacher and Methodologist',
+      company: 'SKYENG',
+      location: 'Moscow, Russia',
+      period: 'Dec 2017 — Nov 2019',
+      type: 'Remote',
+      description: 'Taught English as a Second Language to diverse international students. Designed personalized lesson plans tailored to learners\' needs. Mentored and trained junior teachers in effective teaching methods. Leveraged digital platforms to deliver engaging online classes.',
+      skills: ['ESL Teaching', 'Curriculum Design', 'Teacher Training', 'Online Education', 'Student Mentoring']
+    },
+    {
+      title: 'Administrative Assistant',
+      company: 'Kharkiv Youth City Council (NGO)',
       location: 'Kharkiv, Ukraine',
-      period: 'Jun 2018 - Sep 2019',
-      type: 'Part-time, Volunteer',
-      description: 'Provided support for academically struggling and emotionally distressed high-school students, offering guidance, emotional support, and career advice on study direction.',
-      skills: ['Youth Counseling', 'Emotional Support', 'Academic Guidance', 'Career Advising', 'Mentorship']
-    },
-    {
-      title: 'ESL Instructor',
-      company: 'SkyEng',
-      location: 'Online',
-      period: '2017 - 2019',
-      type: 'Online',
-      description: 'Taught English as a Second Language to international students. Developed strong communication, teaching, and cross-cultural skills.',
-      skills: ['Teaching', 'Cross-cultural Communication', 'Curriculum Development', 'Online Education']
-    },
-    {
-      title: 'Secretarial and Administrative Assistance',
-      company: 'Berean Hope NGO',
-      location: 'Accra, Ghana',
-      period: 'Sep 2014 - Sep 2016',
+      period: 'Nov 2017 — Nov 2019',
       type: 'Volunteer',
-      description: 'Managed donor communications and led a prisons outreach program delivering professional skills to inmates to reduce re-offending.',
-      skills: ['Donor Relations', 'Program Coordination', 'Community Outreach', 'Communication', 'Training Facilitation']
+      description: 'Assisted in coordinating youth programs and civic engagement projects. Supported documentation, scheduling, and meeting preparation. Provided administrative support to NGO leadership and partners.',
+      skills: ['Program Coordination', 'Documentation', 'Meeting Preparation', 'NGO Support', 'Civic Engagement']
     },
     {
-      title: 'Clinical Administrative Secretariat',
+      title: 'Secretarial Assistance',
+      company: 'Berean Hope Mission (NGO)',
+      location: 'Accra, Ghana',
+      period: 'Sep 2014 — Sep 2016',
+      type: 'Volunteer',
+      description: 'Provided clerical and secretarial support for NGO operations. Assisted in organizing community programs and outreach initiatives. Maintained correspondence and records for ongoing projects.',
+      skills: ['Clerical Support', 'Community Programs', 'Record Management', 'Correspondence', 'Outreach Coordination']
+    },
+    {
+      title: 'Clinical Secretariat',
       company: 'Korle-Bu Teaching Hospital, Department of Child Health',
       location: 'Accra, Ghana',
-      period: 'Oct 2013 - Aug 2016',
+      period: 'Oct 2013 — Aug 2016',
       type: 'Administrative',
-      description: 'Facilitated communication between clinical staff and patients; managed appointments, operating room schedules, follow-ups, and referrals to ensure seamless operations.',
-      skills: ['Clinical Coordination', 'Patient Relations', 'Appointment Scheduling', 'OR Scheduling', 'Referrals Management']
+      description: 'Supported the Child Health department with clerical and patient record management. Coordinated appointment scheduling and departmental communications. Assisted medical staff with documentation and reporting. Ensured compliance with hospital administrative standards.',
+      skills: ['Patient Records', 'Appointment Scheduling', 'Medical Documentation', 'Hospital Compliance', 'Departmental Coordination']
     }
   ];
 
@@ -129,7 +129,7 @@ const Experience = () => {
             <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-accent"></div>
 
             {experiences.map((experience, index) => (
-              <div 
+              <div
                 key={index}
                 className={`relative pb-12 transition-all duration-1000 ${
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
@@ -161,7 +161,7 @@ const Experience = () => {
                             </div>
                           </div>
                         </div>
-                        <Badge 
+                        <Badge
                           variant="outline"
                           className="border-primary/30 text-primary mt-2 lg:mt-0"
                         >
@@ -177,7 +177,7 @@ const Experience = () => {
                         <h4 className="font-medium text-foreground text-sm">Key Skills:</h4>
                         <div className="flex flex-wrap gap-2">
                           {experience.skills.map((skill) => (
-                            <Badge 
+                            <Badge
                               key={skill}
                               variant="secondary"
                               className="text-xs bg-secondary/20 text-secondary border-secondary/30"
