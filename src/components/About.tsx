@@ -44,17 +44,17 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-gradient mb-6">Professional Journey</h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    With <span className="text-primary font-semibold">14+ years</span> combined professional experience spanning healthcare, hospitality and ESL, 
-                    I've successfully transitioned into the exciting world of data science and full-stack development.
+                    Leveraging <span className="text-primary font-semibold">14+ years</span> of experience across healthcare, hospitality, and education,
+                    I bring a proven track record of adaptability and problem-solving to the tech industry. This diverse background allows me to approach
+                    software challenges with a unique, user-focused perspective.
                   </p>
                   <p>
-                    My diverse background combines operational excellence, leadership experience, and deep understanding of 
-                    human-centered service delivery with cutting-edge technology skills, allowing me to build innovative solutions 
-                    that bridge multiple industries and solve complex challenges.
+                    My transition into <span className="text-secondary font-semibold">Full Stack Software Engineering</span> is built on a rigorous technical foundation.
+                    My stack includes React, TypeScript, Node.js, and Python, enabling me to build responsive front-end interfaces and robust back-end systems.
                   </p>
                   <p>
-                    Currently based in <span className="text-accent font-semibold">Berlin</span> with an EU work permit, 
-                    I'm passionate about leveraging AI and machine learning to transform business processes and create meaningful impact.
+                    Currently based in <span className="text-accent font-semibold">Berlin</span> (EU Work Permit),
+                    I am seeking Software Development roles where I can contribute my technical expertise and drive to build impactful, scalable software solutions.
                   </p>
                 </div>
               </CardContent>
