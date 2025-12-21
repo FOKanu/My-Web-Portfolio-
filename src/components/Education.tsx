@@ -26,10 +26,20 @@ const Education = () => {
 
   const educationData = [
     {
+      degree: 'BSc IT - Web Applications and Software Development',
+      institution: 'Mediendesign Hochschule für Angewandte Wissenschaften',
+      location: 'Berlin, Germany',
+      period: 'Present',
+      status: 'Currently Enrolled',
+      description: 'Focused on modern web technologies, software architecture, and full-stack development principles.',
+      highlights: ['Web Applications', 'Software Development', 'Media Design', 'Full-Stack Development'],
+      type: 'Bachelor Degree'
+    },
+    {
       degree: 'Data Science & AI Bootcamp',
       institution: 'Le Wagon',
       location: 'Berlin, Germany',
-      period: '2025',
+      period: 'Apr 2025 - Jun 2025',
       status: 'Completed',
       description: 'Intensive program covering machine learning, deep learning, data engineering, and AI applications in real-world scenarios.',
       highlights: ['Python & Machine Learning', 'Deep Learning with TensorFlow/PyTorch', 'Data Engineering & MLOps', 'AI Product Development'],
@@ -39,10 +49,10 @@ const Education = () => {
       degree: 'MBBS (Bachelor of Medicine, Bachelor of Surgery)',
       institution: 'V.N. Karazina Kharkiv National University',
       location: 'Kharkiv, Ukraine',
-      period: '2016 - 2022',
-      status: '4th Year Completed',
+      period: 'Oct 2017 - Feb 2022',
+      status: 'Interrupted due to war',
       description: 'Comprehensive medical education covering human anatomy, physiology, pathology, pharmacology, and clinical medicine.',
-      highlights: ['Clinical Medicine', 'Medical Research', 'Patient Care', 'Medical Ethics', 'Diagnostic Procedures'],
+      highlights: ['General Clinical Medicine', 'Medical Research', 'Patient Care', 'Medical Ethics', 'Diagnostic Procedures'],
       type: 'Medical Degree'
     }
   ];
@@ -70,7 +80,7 @@ const Education = () => {
 
         <div className="max-w-5xl mx-auto space-y-8">
           {educationData.map((education, index) => (
-            <Card 
+            <Card
               key={index}
               className={`card-professional hover-lift transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -91,7 +101,7 @@ const Education = () => {
                           <p className="text-lg text-muted-foreground font-medium">{education.institution}</p>
                         </div>
                       </div>
-                      <Badge 
+                      <Badge
                         variant={education.status === 'Current' ? 'default' : 'secondary'}
                         className={education.status === 'Current' ? 'bg-primary text-primary-foreground' : ''}
                       >
@@ -126,7 +136,7 @@ const Education = () => {
                     </h4>
                     <div className="space-y-2">
                       {education.highlights.map((highlight) => (
-                        <div 
+                        <div
                           key={highlight}
                           className="flex items-center p-2 rounded-lg bg-muted/50 border border-border/30"
                         >
@@ -153,7 +163,7 @@ const Education = () => {
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {certifications.map((cert, index) => (
-                  <div 
+                  <div
                     key={cert}
                     className="flex items-center p-4 rounded-lg bg-gradient-card border border-border/30 hover:border-primary/30 transition-all duration-300"
                   >
@@ -174,9 +184,9 @@ const Education = () => {
             <CardContent className="p-8">
               <h4 className="text-xl font-semibold text-gradient-accent mb-4">Lifelong Learning Philosophy</h4>
               <p className="text-muted-foreground leading-relaxed">
-                My educational journey reflects a commitment to interdisciplinary learning, combining medical science 
-                with cutting-edge technology. I believe in the power of continuous learning to bridge traditional 
-                healthcare with innovative technological solutions, always staying current with emerging trends in 
+                My educational journey reflects a commitment to interdisciplinary learning, combining medical science
+                with cutting-edge technology. I believe in the power of continuous learning to bridge traditional
+                healthcare with innovative technological solutions, always staying current with emerging trends in
                 AI, machine learning, and digital health.
               </p>
             </CardContent>

@@ -57,7 +57,6 @@ export const projects: Project[] = [
     category: 'AI/ML Healthcare',
     status: 'Production',
     image: 'doctai-health-hub',
-    demoUrl: 'https://github.com/FOKanu/doctai-health-hub',
     codeUrl: 'https://github.com/FOKanu/doctai-health-hub',
     metric: 'Modular UI with 30+ tested components',
     gallery: [

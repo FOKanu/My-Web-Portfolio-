@@ -198,20 +198,22 @@ const Projects = () => {
                               </p>
                             </div>
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
-                            <div className="text-center p-8">
+                            <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
                               <img
-                                src="/images/projects/doctai-logo.png"
-                                alt="DoctAI Health Hub project logo"
-                                className="w-40 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300 rounded-lg"
+                                src="/images/projects/doctai-health-hub/02-dashboard-1.png"
+                                alt="DoctAI Health Hub project preview"
+                                className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
                                 loading="lazy"
                               />
-                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
-                              <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
-                                {projects[currentProject].title}
-                              </p>
-                              <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Click to view demo →
-                              </p>
+                              <div className="relative z-10">
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                                <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                  {projects[currentProject].title}
+                                </p>
+                                <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  Click to view gallery →
+                                </p>
+                              </div>
                             </div>
                           ) : projects[currentProject].title === 'Aria Agentic System' ? (
                             <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
@@ -270,20 +272,22 @@ const Projects = () => {
                               </p>
                             </div>
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
-                            <div className="text-center p-8">
+                            <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
                               <img
-                                src="/images/projects/doctai-logo.png"
-                                alt="DoctAI Health Hub project logo"
-                                className="w-40 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300 rounded-lg"
+                                src="/images/projects/doctai-health-hub/02-dashboard-1.png"
+                                alt="DoctAI Health Hub project preview"
+                                className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
                                 loading="lazy"
                               />
-                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
-                              <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
-                                {projects[currentProject].title}
-                              </p>
-                              <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Click to view details →
-                              </p>
+                              <div className="relative z-10">
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                                <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                  {projects[currentProject].title}
+                                </p>
+                                <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  Click to view gallery →
+                                </p>
+                              </div>
                             </div>
                           ) : projects[currentProject].title === 'Aria Agentic System' ? (
                             <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
