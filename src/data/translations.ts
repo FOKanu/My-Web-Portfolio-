@@ -21,7 +21,7 @@ export const translations = {
     about: {
       title: 'About Me',
       journeyTitle: 'Professional Journey',
-      journeyText1: 'Leveraging <span class="text-primary font-semibold">14+ years</span> of experience across healthcare, hospitality, and education, I bring a proven track record of adaptability and problem-solving to the tech industry. This diverse background allows me to approach software challenges with a unique, user-focused perspective.',
+      journeyText1: 'Leveraging <span class="text-primary font-semibold">10+ years</span> of experience across healthcare, hospitality, and education, I bring a proven track record of adaptability and problem-solving to the tech industry. This diverse background allows me to approach software challenges with a unique, user-focused perspective.',
       journeyText2: 'My transition into <span class="text-secondary font-semibold">Full Stack Software Engineering</span> is built on a rigorous technical foundation. My stack includes React, TypeScript, Node.js, and Python, enabling me to build responsive front-end interfaces and robust back-end systems.',
       journeyText3: 'Currently based in <span class="text-accent font-semibold">Berlin</span> (EU Work Permit), I am seeking Software Development roles where I can contribute my technical expertise and drive to build impactful, scalable software solutions.',
       viewProjects: 'View Projects',
@@ -310,7 +310,7 @@ export const translations = {
     about: {
       title: 'Über mich',
       journeyTitle: 'Beruflicher Werdegang',
-      journeyText1: 'Mit über <span class="text-primary font-semibold">14 Jahren</span> Erfahrung im Gesundheitswesen, Gastgewerbe und Bildungswesen bringe ich eine nachgewiesene Erfolgsbilanz in Anpassungsfähigkeit und Problemlösung in die Technologiebranche ein. Dieser vielfältige Hintergrund ermöglicht es mir, Software-Herausforderungen aus einer einzigartigen, benutzerorientierten Perspektive anzugehen.',
+      journeyText1: 'Mit über <span class="text-primary font-semibold">10 Jahren</span> Erfahrung im Gesundheitswesen, Gastgewerbe und Bildungswesen bringe ich eine nachgewiesene Erfolgsbilanz in Anpassungsfähigkeit und Problemlösung in die Technologiebranche ein. Dieser vielfältige Hintergrund ermöglicht es mir, Software-Herausforderungen aus einer einzigartigen, benutzerorientierten Perspektive anzugehen.',
       journeyText2: 'Mein Übergang zum <span class="text-secondary font-semibold">Full-Stack-Software-Engineering</span> baut auf einem soliden technischen Fundament auf. Mein Tech-Stack umfasst React, TypeScript, Node.js und Python, was mir ermöglicht, reaktionsschnelle Front-End-Schnittstellen und robuste Back-End-Systeme zu entwickeln.',
       journeyText3: 'Derzeit in <span class="text-accent font-semibold">Berlin</span> ansässig (EU-Arbeitserlaubnis), suche ich nach Positionen in der Softwareentwicklung, in denen ich meine technische Expertise einbringen und wirkungsvolle, skalierbare Softwarelösungen entwickeln kann.',
       viewProjects: 'Projekte ansehen',
@@ -460,7 +460,7 @@ export const translations = {
       subtitle: 'Kontinuierliche Lernreise, die Medizin, Technologie und Innovation verbindet',
       degrees: [
         {
-          degree: 'BSc IT - Web Applications and Software Development',
+          degree: 'BSc IT - Webanwendungen und Softwareentwicklung',
           institution: 'Mediendesign Hochschule für Angewandte Wissenschaften',
           location: 'Berlin, Deutschland',
           period: 'Gegenwart',
@@ -469,7 +469,7 @@ export const translations = {
           type: 'Bachelor-Abschluss'
         },
         {
-          degree: 'Data Science & AI Bootcamp',
+          degree: 'Data Science & KI Bootcamp',
           institution: 'Le Wagon',
           location: 'Berlin, Deutschland',
           period: 'Apr 2025 - Jun 2025',
@@ -478,7 +478,7 @@ export const translations = {
           type: 'Bootcamp'
         },
         {
-          degree: 'MBBS (Bachelor of Medicine, Bachelor of Surgery)',
+          degree: 'MBBS (Bachelor der Medizin, Bachelor der Chirurgie)',
           institution: 'V.N. Karasina Nationale Universität Charkiw',
           location: 'Charkiw, Ukraine',
           period: 'Okt 2017 - Feb 2022',

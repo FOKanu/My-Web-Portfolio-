@@ -72,21 +72,21 @@ const About = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <Card className="card-professional hover-lift">
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">14+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">10+</div>
                   <div className="text-sm text-muted-foreground">{t('about.stats.experience')}</div>
                 </CardContent>
               </Card>
 
               <Card className="card-professional hover-lift">
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-secondary mb-2">7+</div>
+                  <div className="text-3xl font-bold text-secondary mb-2">5+</div>
                   <div className="text-sm text-muted-foreground">{t('about.stats.languages')}</div>
                 </CardContent>
               </Card>
 
               <Card className="card-professional hover-lift">
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-accent mb-2">5+</div>
+                  <div className="text-3xl font-bold text-accent mb-2">15+</div>
                   <div className="text-sm text-muted-foreground">{t('about.stats.projects')}</div>
                 </CardContent>
               </Card>
