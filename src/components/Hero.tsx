@@ -16,8 +16,8 @@ const Hero = () => {
   };
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="min-h-screen relative flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(15, 25, 45, 0.8), rgba(15, 25, 45, 0.6)), url(${heroImage})`,
@@ -40,7 +40,7 @@ const Hero = () => {
         <h1 className="text-6xl md:text-8xl font-bold mb-6">
           <span className="text-gradient animate-fade-in">Francis Kanu</span>
         </h1>
-        
+
         <div className={`text-2xl md:text-3xl mb-4 transition-all duration-1000 delay-300 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
@@ -59,17 +59,17 @@ const Hero = () => {
         <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 transition-all duration-1000 delay-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-gradient-primary hover:shadow-glow transition-smooth text-lg px-8 py-4 rounded-full"
             asChild
           >
-            <a href="/cv/francis-kanu-cv.pdf" download aria-label="Download Francis Kanu CV (PDF)">
+            <a href="/cv/francis-kanu-fullstack-cv.pdf" download aria-label="Download Francis Kanu CV (PDF)">
               <Download className="mr-2" size={20} />
               Download CV
             </a>
           </Button>
-          
+
           <Button
             size="lg"
             variant="secondary"
@@ -78,7 +78,7 @@ const Hero = () => {
           >
             <a href="#contact" aria-label="Contact Francis Kanu">Contact me</a>
           </Button>
-          
+
           <div className="flex gap-4">
             <Button
               variant="outline"
@@ -90,7 +90,7 @@ const Hero = () => {
                 <Github size={20} />
               </a>
             </Button>
-            
+
             <Button
               variant="outline"
               size="icon"
@@ -101,7 +101,7 @@ const Hero = () => {
                 <Linkedin size={20} />
               </a>
             </Button>
-            
+
             <Button
               variant="outline"
               size="icon"
@@ -119,7 +119,7 @@ const Hero = () => {
         <div className={`transition-all duration-1000 delay-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <button 
+          <button
             onClick={scrollToNext}
             className="text-primary hover:text-primary-glow transition-smooth animate-bounce"
           >

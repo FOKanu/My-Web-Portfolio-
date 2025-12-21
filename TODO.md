@@ -12,8 +12,8 @@ Last updated: 2025-08-08
 - [ ] Create a branded OG image (headshot + brand color) and set it in index.html
 
 ## 2) CTAs & CV
-- [ ] Add CV PDF at public/cv/francis-kanu-cv.pdf
-- [ ] Wire “Download CV” buttons in Hero and About to the PDF
+- [x] Add CV PDF at public/cv/francis-kanu-fullstack-cv.pdf
+- [x] Wire “Download CV” buttons in Hero and About to the PDF
 - [ ] Add primary “Contact me” CTA in Hero linking to #contact
 
 ## 3) Theme (Light/Dark)

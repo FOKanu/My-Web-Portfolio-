@@ -62,7 +62,7 @@ const About = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="bg-gradient-primary hover:shadow-glow transition-smooth" asChild>
-                <a href="/cv/francis-kanu-cv.pdf" download aria-label="Download Francis Kanu CV (PDF)">
+                <a href="/cv/francis-kanu-fullstack-cv.pdf" download aria-label="Download Francis Kanu CV (PDF)">
                   <Download className="mr-2" size={18} />
                   Download CV
                 </a>
