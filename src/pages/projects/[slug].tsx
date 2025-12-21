@@ -68,10 +68,28 @@ const ProjectDetail = () => {
           <p className="text-sm text-muted-foreground mb-8">{project.metric}</p>
         )}
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 mb-16">
           <a className="underline text-primary" href={project.codeUrl} target="_blank" rel="noreferrer">View code</a>
           <a className="underline text-primary" href={project.demoUrl} target="_blank" rel="noreferrer">Live demo</a>
         </div>
+
+        {project.gallery && project.gallery.length > 0 && (
+          <div className="space-y-12">
+            <h2 className="text-2xl font-bold mb-6">Project Gallery</h2>
+            <div className="grid gap-8">
+              {project.gallery.map((image, index) => (
+                <div key={index} className="rounded-lg overflow-hidden border border-border/50 shadow-lg hover:shadow-xl transition-shadow">
+                  <img
+                    src={image}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    className="w-full h-auto object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {projectJsonLd && (
           <script
@@ -86,4 +104,3 @@ const ProjectDetail = () => {
 };
 
 export default ProjectDetail;
-
