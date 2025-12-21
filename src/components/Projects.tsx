@@ -245,6 +245,24 @@ const Projects = () => {
                                 </p>
                               </div>
                             </div>
+                          ) : projects[currentProject].title === 'Oasis Finance' ? (
+                            <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
+                              <img
+                                src="/images/projects/oasis-finance/dashboard.png"
+                                alt="Oasis Finance project preview"
+                                className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
+                                loading="lazy"
+                              />
+                              <div className="relative z-10">
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
+                                <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                  {projects[currentProject].title}
+                                </p>
+                                <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  {t('projects.clickToView')} {t('projects.galleryArrow')}
+                                </p>
+                              </div>
+                            </div>
                           ) : (
                             <div className="text-center p-8">
                               <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-all duration-300">
@@ -308,6 +326,24 @@ const Projects = () => {
                               <img
                                 src="/images/projects/aria-agentic-system/03-home-page.png"
                                 alt="Aria Agentic System project preview"
+                                className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
+                                loading="lazy"
+                              />
+                              <div className="relative z-10">
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
+                                <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                  {projects[currentProject].title}
+                                </p>
+                                <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  {t('projects.clickToView')} {t('projects.galleryArrow')}
+                                </p>
+                              </div>
+                            </div>
+                          ) : projects[currentProject].title === 'Oasis Finance' ? (
+                            <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
+                              <img
+                                src="/images/projects/oasis-finance/dashboard.png"
+                                alt="Oasis Finance project preview"
                                 className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
                                 loading="lazy"
                               />

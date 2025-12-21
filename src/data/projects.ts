@@ -146,6 +146,18 @@ export const projects: Project[] = [
     demoUrl: '#',
     codeUrl: '#',
     metric: 'Hybrid RNN-Transformer Architecture with Multi-head Attention',
+    gallery: [
+      '/images/projects/oasis-finance/assets.png',
+      '/images/projects/oasis-finance/budget-planner.png',
+      '/images/projects/oasis-finance/crypto.png',
+      '/images/projects/oasis-finance/dashboard-2.png',
+      '/images/projects/oasis-finance/dashboard.png',
+      '/images/projects/oasis-finance/data-upload.png',
+      '/images/projects/oasis-finance/insights.png',
+      '/images/projects/oasis-finance/savings-manager.png',
+      '/images/projects/oasis-finance/securities.png',
+      '/images/projects/oasis-finance/stocks-and-indices.png',
+    ],
   },
   {
     slug: 'berlin-connect',
