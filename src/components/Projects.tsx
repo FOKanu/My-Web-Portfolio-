@@ -168,8 +168,8 @@ const Projects = () => {
                         <div className="aspect-video bg-gradient-card rounded-lg border border-border/50 flex items-center justify-center group-hover:border-primary/50 group-hover:shadow-glow transition-all duration-300">
                           {projects[currentProject].title === 'Skin Check AI' ? (
                             <div className="text-center p-8">
-                              <img 
-                                src="/images/projects/skin-check-ai-logo.png" 
+                              <img
+                                src="/images/projects/skin-check-ai-logo.png"
                                 alt="Skin Check AI project logo"
                                 className="w-32 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300"
                                 loading="lazy"
@@ -184,8 +184,8 @@ const Projects = () => {
                             </div>
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
                             <div className="text-center p-8">
-                              <img 
-                                src="/images/projects/doctai-logo.png" 
+                              <img
+                                src="/images/projects/doctai-logo.png"
                                 alt="DoctAI Health Hub project logo"
                                 className="w-40 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300 rounded-lg"
                                 loading="lazy"
@@ -197,6 +197,24 @@ const Projects = () => {
                               <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 Click to view demo →
                               </p>
+                            </div>
+                          ) : projects[currentProject].title === 'Aria Agentic System' ? (
+                            <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
+                              <img
+                                src="/images/projects/aria-agentic-system/03-home-page.png"
+                                alt="Aria Agentic System project preview"
+                                className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
+                                loading="lazy"
+                              />
+                              <div className="relative z-10">
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                                <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                  {projects[currentProject].title}
+                                </p>
+                                <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  Click to view demo →
+                                </p>
+                              </div>
                             </div>
                           ) : (
                             <div className="text-center p-8">
