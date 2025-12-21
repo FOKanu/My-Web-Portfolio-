@@ -142,10 +142,17 @@ const Projects = () => {
                           className="border-primary/30 hover:border-primary transition-smooth"
                           asChild
                         >
-                          <a href={projects[currentProject].demoUrl} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="mr-2" size={18} />
-                            Live Demo
-                          </a>
+                          {projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? (
+                            <a href={projects[currentProject].demoUrl} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="mr-2" size={18} />
+                              Live Demo
+                            </a>
+                          ) : (
+                            <a href={`/projects/${projects[currentProject].slug}`}>
+                              <ExternalLink className="mr-2" size={18} />
+                              View Gallery
+                            </a>
+                          )}
                         </Button>
                         <Button
                           variant="secondary"
@@ -160,8 +167,8 @@ const Projects = () => {
                     {/* Project Visual */}
                     <div className="relative">
                       <a
-                        href={projects[currentProject].demoUrl}
-                        target="_blank"
+                        href={projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? projects[currentProject].demoUrl : `/projects/${projects[currentProject].slug}`}
+                        target={projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? "_blank" : "_self"}
                         rel="noopener noreferrer"
                         className="block cursor-pointer group"
                       >
@@ -179,7 +186,7 @@ const Projects = () => {
                                 {projects[currentProject].title}
                               </p>
                               <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Click to view demo →
+                                {projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? 'Click to view demo →' : 'Click to view gallery →'}
                               </p>
                             </div>
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
@@ -195,7 +202,7 @@ const Projects = () => {
                                 {projects[currentProject].title}
                               </p>
                               <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Click to view demo →
+                                {projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? 'Click to view demo →' : 'Click to view gallery →'}
                               </p>
                             </div>
                           ) : projects[currentProject].title === 'Aria Agentic System' ? (
@@ -212,7 +219,7 @@ const Projects = () => {
                                   {projects[currentProject].title}
                                 </p>
                                 <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                  Click to view demo →
+                                  Click to view gallery →
                                 </p>
                               </div>
                             </div>
@@ -226,7 +233,7 @@ const Projects = () => {
                                 {projects[currentProject].title}
                               </p>
                               <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Click to view demo →
+                                {projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? 'Click to view demo →' : 'Click to view details →'}
                               </p>
                             </div>
                           )}
