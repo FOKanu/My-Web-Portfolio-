@@ -87,12 +87,12 @@ const Projects = () => {
             <div className={`w-full max-w-4xl transition-all duration-1000 ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}>
-              <Card className="card-professional hover-lift">
-                <CardContent className="p-8">
-                  <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <Card className="card-professional hover-lift overflow-hidden">
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <div className="grid lg:grid-cols-2 gap-6 md:gap-8 items-center">
                     {/* Project Info */}
-                    <div className="space-y-6">
-                      <div className="flex items-center justify-between">
+                    <div className="space-y-4 md:space-y-6 order-2 lg:order-1">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
                         <Badge
                           variant="outline"
                           className="border-primary/30 text-primary font-medium"
@@ -108,60 +108,63 @@ const Projects = () => {
                       </div>
 
                       <div>
-                        <h3 className="text-3xl font-bold text-gradient mb-4">
+                        <h3 className="text-2xl md:text-3xl font-bold text-gradient mb-3 md:mb-4 break-words">
                           {projects[currentProject].title}
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-sm md:text-base break-words">
                           {projects[currentProject].description}
                         </p>
                       </div>
 
                        <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground">{t('projects.techUsed')}</h4>
+                        <h4 className="font-semibold text-foreground text-sm md:text-base">{t('projects.techUsed')}</h4>
                         <div className="flex flex-wrap gap-2">
                           {projects[currentProject].technologies.slice(0, 6).map((tech) => (
                             <Badge
                               key={tech}
                               variant="outline"
-                              className="border-secondary/30 text-secondary"
+                              className="border-secondary/30 text-secondary text-xs md:text-sm"
                             >
                               {tech}
                             </Badge>
                           ))}
                         </div>
                          {projects[currentProject].metric && (
-                           <p className="text-sm text-muted-foreground">{projects[currentProject].metric}</p>
+                           <p className="text-xs md:text-sm text-muted-foreground break-words">{projects[currentProject].metric}</p>
                          )}
                       </div>
 
-                      <div className="flex gap-4 pt-4">
+                      <div className="flex flex-wrap gap-3 pt-2 md:pt-4">
                         <Button
-                          className="bg-gradient-primary hover:shadow-glow transition-smooth"
+                          className="bg-gradient-primary hover:shadow-glow transition-smooth flex-1 sm:flex-none text-sm"
+                          size="sm"
                           asChild
                         >
                           <a href={projects[currentProject].codeUrl} target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2" size={18} />
+                            <Github className="mr-2" size={16} />
                             {t('projects.viewCode')}
                           </a>
                         </Button>
                         <Button
                           variant="outline"
-                          className="border-primary/30 hover:border-primary transition-smooth"
+                          className="border-primary/30 hover:border-primary transition-smooth flex-1 sm:flex-none text-sm"
+                          size="sm"
                           asChild
                         >
                           {projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? (
                             <a href={projects[currentProject].demoUrl} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="mr-2" size={18} />
+                              <ExternalLink className="mr-2" size={16} />
                               {t('projects.liveDemo')}
                             </a>
                           ) : (
                             <Button
                               variant="outline"
-                              className="border-primary/30 hover:border-primary transition-smooth"
+                              className="border-primary/30 hover:border-primary transition-smooth w-full h-full"
+                              size="sm"
                               asChild
                             >
                               <Link to={`/projects/${projects[currentProject].slug}`}>
-                                <ExternalLink className="mr-2" size={18} />
+                                <ExternalLink className="mr-2" size={16} />
                                 {t('projects.viewGallery')}
                               </Link>
                             </Button>
@@ -169,7 +172,8 @@ const Projects = () => {
                         </Button>
                         <Button
                           variant="secondary"
-                          className="ml-2"
+                          className="ml-0 sm:ml-2 flex-1 sm:flex-none text-sm"
+                          size="sm"
                           asChild
                         >
                           <Link to={`/projects/${projects[currentProject].slug}`}>{t('projects.viewCaseStudy')}</Link>
@@ -178,7 +182,7 @@ const Projects = () => {
                     </div>
 
                     {/* Project Visual */}
-                    <div className="relative">
+                    <div className="relative order-1 lg:order-2">
                       {projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? (
                         <a
                           href={projects[currentProject].demoUrl}
