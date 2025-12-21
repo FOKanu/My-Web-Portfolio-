@@ -3,10 +3,12 @@ import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-bg.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setIsVisible(true);
@@ -20,12 +22,12 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen relative flex items-center justify-center overflow-hidden"
+      className="min-h-screen min-h-[100dvh] relative flex items-center justify-center overflow-hidden w-full"
       style={{
         backgroundImage: `linear-gradient(rgba(15, 25, 45, 0.8), rgba(15, 25, 45, 0.6)), url(${heroImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches ? 'scroll' : 'fixed'
+        backgroundAttachment: isMobile ? 'scroll' : 'fixed'
       }}
     >
       {/* Animated Background Elements */}
@@ -36,11 +38,11 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className={`relative z-10 text-center px-6 transition-all duration-1000 ${
+      <div className={`relative z-10 text-center px-4 sm:px-6 w-full max-w-5xl mx-auto transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
-          <span className="text-gradient animate-fade-in">Francis Kanu</span>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 break-words">
+          <span className="text-gradient animate-fade-in block">Francis Kanu</span>
         </h1>
 
         <div className={`text-xl sm:text-2xl md:text-3xl mb-4 transition-all duration-1000 delay-300 ${
