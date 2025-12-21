@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { MapPin, Clock, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,7 +32,7 @@ const About = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="section-header mb-6">About Me</h2>
+          <h2 className="section-header mb-6">{t('about.title')}</h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 rounded-full"></div>
         </div>
 
@@ -41,21 +43,11 @@ const About = () => {
           }`}>
             <Card className="card-professional hover-lift">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-gradient mb-6">Professional Journey</h3>
+                <h3 className="text-2xl font-bold text-gradient mb-6">{t('about.journeyTitle')}</h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Leveraging <span className="text-primary font-semibold">14+ years</span> of experience across healthcare, hospitality, and education,
-                    I bring a proven track record of adaptability and problem-solving to the tech industry. This diverse background allows me to approach
-                    software challenges with a unique, user-focused perspective.
-                  </p>
-                  <p>
-                    My transition into <span className="text-secondary font-semibold">Full Stack Software Engineering</span> is built on a rigorous technical foundation.
-                    My stack includes React, TypeScript, Node.js, and Python, enabling me to build responsive front-end interfaces and robust back-end systems.
-                  </p>
-                  <p>
-                    Currently based in <span className="text-accent font-semibold">Berlin</span> (EU Work Permit),
-                    I am seeking Software Development roles where I can contribute my technical expertise and drive to build impactful, scalable software solutions.
-                  </p>
+                  <p dangerouslySetInnerHTML={{ __html: t('about.journeyText1') }} />
+                  <p dangerouslySetInnerHTML={{ __html: t('about.journeyText2') }} />
+                  <p dangerouslySetInnerHTML={{ __html: t('about.journeyText3') }} />
                 </div>
               </CardContent>
             </Card>
@@ -64,11 +56,11 @@ const About = () => {
               <Button className="bg-gradient-primary hover:shadow-glow transition-smooth" asChild>
                 <a href="/cv/francis-kanu-fullstack-cv.pdf" download aria-label="Download Francis Kanu CV (PDF)">
                   <Download className="mr-2" size={18} />
-                  Download CV
+                  {t('hero.downloadCv')}
                 </a>
               </Button>
               <Button variant="outline" className="border-primary/30 hover:border-primary transition-smooth" asChild>
-                <a href="#projects" aria-label="View projects">View Projects</a>
+                <a href="#projects" aria-label="View projects">{t('about.viewProjects')}</a>
               </Button>
             </div>
           </div>
@@ -81,28 +73,28 @@ const About = () => {
               <Card className="card-professional hover-lift">
                 <CardContent className="p-6 text-center">
                   <div className="text-3xl font-bold text-primary mb-2">14+</div>
-                  <div className="text-sm text-muted-foreground">of Diverse Professional Experience</div>
+                  <div className="text-sm text-muted-foreground">{t('about.stats.experience')}</div>
                 </CardContent>
               </Card>
 
               <Card className="card-professional hover-lift">
                 <CardContent className="p-6 text-center">
                   <div className="text-3xl font-bold text-secondary mb-2">7+</div>
-                  <div className="text-sm text-muted-foreground">Programming Languages</div>
+                  <div className="text-sm text-muted-foreground">{t('about.stats.languages')}</div>
                 </CardContent>
               </Card>
 
               <Card className="card-professional hover-lift">
                 <CardContent className="p-6 text-center">
                   <div className="text-3xl font-bold text-accent mb-2">5+</div>
-                  <div className="text-sm text-muted-foreground">Major Projects</div>
+                  <div className="text-sm text-muted-foreground">{t('about.stats.projects')}</div>
                 </CardContent>
               </Card>
 
               <Card className="card-professional hover-lift">
                 <CardContent className="p-6 text-center">
                   <div className="text-3xl font-bold text-primary-glow mb-2">2025</div>
-                  <div className="text-sm text-muted-foreground">AI Bootcamp Graduate</div>
+                  <div className="text-sm text-muted-foreground">{t('about.stats.bootcamp')}</div>
                 </CardContent>
               </Card>
             </div>
@@ -112,11 +104,11 @@ const About = () => {
                 <div className="space-y-4">
                   <div className="flex items-center text-muted-foreground">
                     <MapPin className="mr-3 text-primary" size={20} />
-                    <span>Berlin, Germany • EU Work Permit</span>
+                    <span>{t('about.location')}</span>
                   </div>
                   <div className="flex items-center text-muted-foreground">
                     <Clock className="mr-3 text-secondary" size={20} />
-                    <span>Available for immediate opportunities</span>
+                    <span>{t('about.availability')}</span>
                   </div>
                 </div>
               </CardContent>
@@ -124,10 +116,10 @@ const About = () => {
 
             <Card className="card-professional">
               <CardContent className="p-6">
-                <h4 className="font-semibold text-gradient-accent mb-3">Multilingual & Creative</h4>
+                <h4 className="font-semibold text-gradient-accent mb-3">{t('about.multilingualTitle')}</h4>
                 <div className="space-y-2 text-sm text-muted-foreground">
-                  <div><span className="font-medium">Languages:</span> 6 languages across 3 continents</div>
-                  <div><span className="font-medium">Focus:</span> Creative writing, philosophy, and intellectual pursuits</div>
+                  <div>{t('about.multilingualText1')}</div>
+                  <div>{t('about.multilingualText2')}</div>
                 </div>
               </CardContent>
             </Card>

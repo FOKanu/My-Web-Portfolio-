@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { Code, Database, Brain, Cloud, Wrench, GitBranch } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import skillsBg from '@/assets/skills-bg.jpg';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,37 +28,37 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: 'Programming Languages',
+      title: t('skills.categories.programming'),
       icon: Code,
       color: 'text-primary',
       skills: ['Python', 'JavaScript', 'TypeScript', 'R', 'SQL']
     },
     {
-      title: 'Frameworks & Libraries',
+      title: t('skills.categories.frameworks'),
       icon: Wrench,
       color: 'text-secondary',
       skills: ['FastAPI', 'React', 'React Native', 'Expo', 'Node.js']
     },
     {
-      title: 'Machine Learning',
+      title: t('skills.categories.ml'),
       icon: Brain,
       color: 'text-accent',
       skills: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'XGBoost', 'Pandas']
     },
     {
-      title: 'Cloud & DevOps',
+      title: t('skills.categories.cloud'),
       icon: Cloud,
       color: 'text-primary-glow',
       skills: ['Docker', 'GitHub Actions', 'GCP', 'AWS', 'Firebase']
     },
     {
-      title: 'Databases',
+      title: t('skills.categories.databases'),
       icon: Database,
       color: 'text-secondary',
       skills: ['PostgreSQL', 'SQLite', 'Supabase', 'MongoDB', 'Redis']
     },
     {
-      title: 'Tools & Platforms',
+      title: t('skills.categories.tools'),
       icon: GitBranch,
       color: 'text-accent',
       skills: ['Git', 'VS Code', 'Jupyter', 'Postman', 'Figma']
@@ -64,9 +66,9 @@ const Skills = () => {
   ];
 
   return (
-    <section 
-      ref={sectionRef} 
-      id="skills" 
+    <section
+      ref={sectionRef}
+      id="skills"
       className="py-20 relative overflow-hidden"
       style={{
         backgroundImage: `url(${skillsBg})`,
@@ -80,10 +82,10 @@ const Skills = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="section-header mb-6">Skills & Tools</h2>
+          <h2 className="section-header mb-6">{t('skills.title')}</h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit combining medical expertise with modern technology
+            {t('skills.subtitle')}
           </p>
         </div>
 
@@ -91,7 +93,7 @@ const Skills = () => {
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <Card 
+              <Card
                 key={category.title}
                 className={`card-professional hover-lift transition-all duration-1000 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -105,10 +107,10 @@ const Skills = () => {
                     </div>
                     <h3 className="text-xl font-semibold text-foreground">{category.title}</h3>
                   </div>
-                  
+
                   <div className="space-y-3">
                     {category.skills.map((skill, skillIndex) => (
-                      <div 
+                      <div
                         key={skill}
                         className={`flex items-center p-3 rounded-lg bg-background/50 border border-border/50 hover:border-primary/30 transition-all duration-300 ${
                           isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
@@ -132,11 +134,9 @@ const Skills = () => {
         }`}>
           <Card className="card-professional max-w-4xl mx-auto">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-gradient mb-4">Specialized Expertise</h3>
+              <h3 className="text-2xl font-bold text-gradient mb-4">{t('skills.expertiseTitle')}</h3>
               <p className="text-muted-foreground leading-relaxed">
-                My unique combination of medical background and technical skills enables me to understand complex healthcare challenges 
-                and translate them into innovative technological solutions. I specialize in AI-powered medical applications, 
-                data-driven healthcare analytics, and user-centric health technology platforms.
+                {t('skills.expertiseText')}
               </p>
             </CardContent>
           </Card>

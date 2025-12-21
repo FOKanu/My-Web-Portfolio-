@@ -1,8 +1,10 @@
 import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -16,36 +18,36 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <div className="text-2xl font-bold text-gradient mb-2">Francis Kanu</div>
             <p className="text-muted-foreground">
-              Data Scientist & Software Engineer (Fullstack)
+              {t('footer.role')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="text-center">
             <div className="flex flex-wrap justify-center gap-6">
-              <button 
+              <button
                 onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
                 className="text-muted-foreground hover:text-primary transition-smooth"
               >
-                About
+                {t('nav.about')}
               </button>
-              <button 
+              <button
                 onClick={() => document.querySelector('#skills')?.scrollIntoView({ behavior: 'smooth' })}
                 className="text-muted-foreground hover:text-primary transition-smooth"
               >
-                Skills
+                {t('nav.skills')}
               </button>
-              <button 
+              <button
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
                 className="text-muted-foreground hover:text-primary transition-smooth"
               >
-                Projects
+                {t('nav.projects')}
               </button>
-              <button 
+              <button
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="text-muted-foreground hover:text-primary transition-smooth"
               >
-                Contact
+                {t('nav.contact')}
               </button>
             </div>
           </div>
@@ -88,15 +90,15 @@ const Footer = () => {
         <div className="border-t border-border/30 mt-8 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © {currentYear} Francis Kanu All rights reserved.
+              © {currentYear} Francis Kanu {t('footer.rights')}
             </p>
-            
-            
-            <button 
+
+
+            <button
               onClick={scrollToTop}
               className="text-sm text-muted-foreground hover:text-primary transition-smooth underline"
             >
-              Back to Top
+              {t('footer.backToTop')}
             </button>
           </div>
         </div>

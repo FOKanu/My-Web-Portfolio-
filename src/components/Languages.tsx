@@ -3,10 +3,12 @@ import { Globe, Flag, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import digitalGlobe from '@/assets/digital-globe.jpg';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Languages = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,49 +31,49 @@ const Languages = () => {
     {
       name: 'English',
       level: 'C2',
-      proficiency: 'Native',
+      proficiency: t('languages.levels.native'),
       flag: '🇺🇸',
-      note: 'Native speaker',
+      note: t('languages.notes.native'),
       color: 'text-primary'
     },
     {
       name: 'German',
       level: 'B1',
-      proficiency: 'Intermediate',
+      proficiency: t('languages.levels.intermediate'),
       flag: '🇩🇪',
-      note: 'Actively improving my German. I\'m committed to continuing my learning, especially after I\'m hired.',
+      note: t('languages.notes.german'),
       color: 'text-secondary'
     },
     {
       name: 'Russian',
       level: 'B2',
-      proficiency: 'Upper Intermediate',
+      proficiency: t('languages.levels.upperIntermediate'),
       flag: '🇷🇺',
-      note: 'Professional working proficiency',
+      note: t('languages.notes.russian'),
       color: 'text-accent'
     },
     {
       name: 'Ga',
       level: 'C1',
-      proficiency: 'Advanced',
+      proficiency: t('languages.levels.advanced'),
       flag: '🇬🇭',
-      note: 'Native Ghanaian language',
+      note: t('languages.notes.ghanaian'),
       color: 'text-secondary'
     },
     {
       name: 'Dagomba',
       level: 'C2',
-      proficiency: 'Native',
+      proficiency: t('languages.levels.native'),
       flag: '🇬🇭',
-      note: 'Native Ghanaian language',
+      note: t('languages.notes.ghanaian'),
       color: 'text-primary'
     },
     {
       name: 'Twi',
       level: 'C2',
-      proficiency: 'Native',
+      proficiency: t('languages.levels.native'),
       flag: '🇬🇭',
-      note: 'Native Ghanaian language',
+      note: t('languages.notes.ghanaian'),
       color: 'text-accent'
     }
   ];
@@ -98,10 +100,10 @@ const Languages = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="section-header mb-6">Languages</h2>
+          <h2 className="section-header mb-6">{t('languages.title')}</h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Multilingual communication enabling global collaboration
+            {t('languages.subtitle')}
           </p>
         </div>
 
@@ -110,7 +112,7 @@ const Languages = () => {
             {languages.map((language, index) => (
               <Tooltip key={language.name}>
                 <TooltipTrigger asChild>
-                  <Card 
+                  <Card
                     className={`card-professional hover-lift cursor-pointer transition-all duration-1000 hover:scale-105 ${
                       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}
@@ -129,16 +131,16 @@ const Languages = () => {
                         </div>
                         <Globe className={`${language.color}`} size={20} />
                       </div>
-                      
+
                       <div className="space-y-2">
                         <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">Proficiency</span>
+                          <span className="text-muted-foreground">{t('languages.proficiency')}</span>
                           <span className="font-medium">{language.proficiency}</span>
                         </div>
                         <div className="w-full bg-background/50 rounded-full h-2">
-                          <div 
+                          <div
                             className={`h-2 rounded-full transition-all duration-1000 delay-${index * 150} ${language.color.replace('text-', 'bg-')}`}
-                            style={{ 
+                            style={{
                               width: isVisible ? getProficiencyWidth(language.level) : '0%',
                               transitionDelay: `${(index * 150) + 500}ms`
                             }}
@@ -148,8 +150,8 @@ const Languages = () => {
                     </CardContent>
                   </Card>
                 </TooltipTrigger>
-                <TooltipContent 
-                  side="top" 
+                <TooltipContent
+                  side="top"
                   className="max-w-xs p-4 bg-card border-border/50 shadow-elegant"
                 >
                   <div className="space-y-2">
@@ -160,7 +162,7 @@ const Languages = () => {
                     <p className="text-sm text-muted-foreground">{language.note}</p>
                     {language.name === 'German' && (
                       <div className="mt-2 p-2 bg-secondary/20 rounded-md">
-                        <span className="text-xs text-secondary font-medium">🚀 Currently learning</span>
+                        <span className="text-xs text-secondary font-medium">{t('languages.learning')}</span>
                       </div>
                     )}
                   </div>
@@ -178,11 +180,10 @@ const Languages = () => {
             <CardContent className="p-6">
               <div className="flex items-center justify-center mb-4">
                 <Flag className="text-primary mr-2" size={24} />
-                <h3 className="text-lg font-semibold text-gradient">Multilingual Professional</h3>
+                <h3 className="text-lg font-semibold text-gradient">{t('languages.summaryTitle')}</h3>
               </div>
               <p className="text-muted-foreground text-sm">
-                Fluent in 6 languages across 3 continents, enabling effective communication 
-                in diverse international environments and multicultural teams.
+                {t('languages.summaryText')}
               </p>
             </CardContent>
           </Card>

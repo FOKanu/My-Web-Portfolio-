@@ -9,9 +9,12 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import contactBg from '@/assets/skills-bg.jpg';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
+
   const formSchema = z.object({
     name: z.string().min(2, 'Name is too short'),
     email: z.string().email('Enter a valid email'),
@@ -52,35 +55,35 @@ const Contact = () => {
       `Name: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`
     )}`;
     window.location.href = mailtoLink;
-    toast({ title: 'Message prepared', description: 'Your email client will open with the message.' });
+    toast({ title: t('contact.form.successTitle'), description: t('contact.form.successDesc') });
     reset();
   };
 
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
+      label: t('contact.labels.email'),
       value: 'francis.okorie.ik@gmail.com',
       href: 'mailto:francis.okorie.ik@gmail.com',
       color: 'text-primary'
     },
     {
       icon: MapPin,
-      label: 'Location',
+      label: t('contact.labels.location'),
       value: 'Berlin, Germany',
       href: null,
       color: 'text-secondary'
     },
     {
       icon: Github,
-      label: 'GitHub',
+      label: t('contact.labels.github'),
       value: 'github.com/FOKanu',
       href: 'https://github.com/FOKanu',
       color: 'text-accent'
     },
     {
       icon: Linkedin,
-      label: 'LinkedIn',
+      label: t('contact.labels.linkedin'),
       value: 'Francis Okore',
       href: 'https://www.linkedin.com/in/francis-okorie-i-k-817254286',
       color: 'text-primary-glow'
@@ -102,10 +105,10 @@ const Contact = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="section-header mb-6">Let's Connect</h2>
+          <h2 className="section-header mb-6">{t('contact.title')}</h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to collaborate on innovative healthcare and technology solutions
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -116,18 +119,16 @@ const Contact = () => {
           }`}>
             <Card className="card-professional">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-gradient mb-6">Get In Touch</h3>
+                <h3 className="text-2xl font-bold text-gradient mb-6">{t('contact.getInTouch')}</h3>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  I'm always interested in discussing new opportunities, innovative projects, 
-                  and collaborations at the intersection of healthcare and technology. 
-                  Let's explore how we can work together to make a meaningful impact.
+                  {t('contact.introText')}
                 </p>
 
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => {
                     const IconComponent = info.icon;
                     return (
-                      <div 
+                      <div
                         key={info.label}
                         className="flex items-center p-4 rounded-lg bg-background/50 border border-border/50 hover:border-primary/30 transition-all duration-300"
                       >
@@ -137,7 +138,7 @@ const Contact = () => {
                         <div className="flex-1">
                           <div className="font-medium text-foreground">{info.label}</div>
                           {info.href ? (
-                            <a 
+                            <a
                               href={info.href}
                               target={info.href.startsWith('http') ? '_blank' : undefined}
                               rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -159,9 +160,9 @@ const Contact = () => {
             {/* Quick Links */}
             <Card className="card-professional">
               <CardContent className="p-6">
-                <h4 className="font-semibold text-gradient-accent mb-4">Quick Actions</h4>
+                <h4 className="font-semibold text-gradient-accent mb-4">{t('contact.quickActions')}</h4>
                 <div className="grid grid-cols-2 gap-4">
-                  <Button 
+                  <Button
                     variant="outline"
                     className="border-primary/30 hover:border-primary transition-smooth"
                     asChild
@@ -171,7 +172,7 @@ const Contact = () => {
                       GitHub
                     </a>
                   </Button>
-                  <Button 
+                  <Button
                     variant="outline"
                     className="border-secondary/30 hover:border-secondary transition-smooth"
                     asChild
@@ -192,13 +193,13 @@ const Contact = () => {
           }`}>
             <Card className="card-professional">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-gradient mb-6">Send a Message</h3>
-                
+                <h3 className="text-2xl font-bold text-gradient mb-6">{t('contact.sendMessage')}</h3>
+
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                        Your Name
+                        {t('contact.form.name')}
                       </label>
                       <Input
                         id="name"
@@ -207,13 +208,13 @@ const Contact = () => {
                         aria-invalid={!!errors.name}
                         {...register('name')}
                         className="bg-background/50 border-border/50 focus:border-primary transition-smooth"
-                        placeholder="Enter your name"
+                        placeholder={t('contact.form.namePlaceholder')}
                       />
                       {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>}
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                        Email Address
+                        {t('contact.form.email')}
                       </label>
                       <Input
                         id="email"
@@ -222,7 +223,7 @@ const Contact = () => {
                         aria-invalid={!!errors.email}
                         {...register('email')}
                         className="bg-background/50 border-border/50 focus:border-primary transition-smooth"
-                        placeholder="Enter your email"
+                        placeholder={t('contact.form.emailPlaceholder')}
                       />
                       {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>}
                     </div>
@@ -230,7 +231,7 @@ const Contact = () => {
 
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                      Subject
+                      {t('contact.form.subject')}
                     </label>
                     <Input
                       id="subject"
@@ -239,14 +240,14 @@ const Contact = () => {
                       aria-invalid={!!errors.subject}
                       {...register('subject')}
                       className="bg-background/50 border-border/50 focus:border-primary transition-smooth"
-                      placeholder="What's this about?"
+                      placeholder={t('contact.form.subjectPlaceholder')}
                     />
                     {errors.subject && <p className="text-sm text-red-500 mt-1">{errors.subject.message}</p>}
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                      Message
+                      {t('contact.form.message')}
                     </label>
                     <Textarea
                       id="message"
@@ -255,25 +256,25 @@ const Contact = () => {
                       aria-invalid={!!errors.message}
                       {...register('message')}
                       className="bg-background/50 border-border/50 focus:border-primary transition-smooth resize-none"
-                      placeholder="Tell me about your project or opportunity..."
+                      placeholder={t('contact.form.messagePlaceholder')}
                     />
                     {errors.message && <p className="text-sm text-red-500 mt-1">{errors.message.message}</p>}
                   </div>
 
-                  <Button 
+                  <Button
                     type="submit"
                     size="lg"
                     className="w-full bg-gradient-primary hover:shadow-glow transition-smooth"
                     disabled={isSubmitting}
                   >
                     <Send className="mr-2" size={18} />
-                    {isSubmitting ? 'Sending…' : 'Send Message'}
+                    {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                   </Button>
                 </form>
 
                 <div className="mt-6 p-4 bg-muted/50 rounded-lg border border-border/30">
                   <p className="text-sm text-muted-foreground text-center">
-                    <strong>Response Time:</strong> I typically respond to messages within 24 hours during business days.
+                    <strong>{t('contact.form.responseTime')}</strong> {t('contact.form.responseDesc')}
                   </p>
                 </div>
               </CardContent>

@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Education = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,46 +26,14 @@ const Education = () => {
     return () => observer.disconnect();
   }, []);
 
-  const educationData = [
-    {
-      degree: 'BSc IT - Web Applications and Software Development',
-      institution: 'Mediendesign Hochschule für Angewandte Wissenschaften',
-      location: 'Berlin, Germany',
-      period: 'Present',
-      status: 'Currently Enrolled',
-      description: 'Focused on modern web technologies, software architecture, and full-stack development principles.',
-      highlights: ['Web Applications', 'Software Development', 'Media Design', 'Full-Stack Development'],
-      type: 'Bachelor Degree'
-    },
-    {
-      degree: 'Data Science & AI Bootcamp',
-      institution: 'Le Wagon',
-      location: 'Berlin, Germany',
-      period: 'Apr 2025 - Jun 2025',
-      status: 'Completed',
-      description: 'Intensive program covering machine learning, deep learning, data engineering, and AI applications in real-world scenarios.',
-      highlights: ['Python & Machine Learning', 'Deep Learning with TensorFlow/PyTorch', 'Data Engineering & MLOps', 'AI Product Development'],
-      type: 'Bootcamp'
-    },
-    {
-      degree: 'MBBS (Bachelor of Medicine, Bachelor of Surgery)',
-      institution: 'V.N. Karazina Kharkiv National University',
-      location: 'Kharkiv, Ukraine',
-      period: 'Oct 2017 - Feb 2022',
-      status: 'Interrupted due to war',
-      description: 'Comprehensive medical education covering human anatomy, physiology, pathology, pharmacology, and clinical medicine.',
-      highlights: ['General Clinical Medicine', 'Medical Research', 'Patient Care', 'Medical Ethics', 'Diagnostic Procedures'],
-      type: 'Medical Degree'
-    }
-  ];
+  const educationData = t('education.degrees').map((degree: any, index: number) => {
+    const highlights = index === 0 ? t('education.highlights.web') :
+                       index === 1 ? t('education.highlights.ai') :
+                       t('education.highlights.med');
+    return { ...degree, highlights };
+  });
 
-  const certifications = [
-    'AWS Cloud Practitioner (In Progress)',
-    'Google Cloud Platform Fundamentals',
-    'TensorFlow Developer Certificate (Planned)',
-    'React Professional Certification',
-    'Medical Ethics & Patient Safety'
-  ];
+  const certifications = t('education.certifications');
 
   return (
     <section ref={sectionRef} id="education" className="py-20 bg-background">
@@ -71,15 +41,15 @@ const Education = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="section-header mb-6">Education & Learning</h2>
+          <h2 className="section-header mb-6">{t('education.title')}</h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Continuous learning journey bridging medicine, technology, and innovation
+            {t('education.subtitle')}
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto space-y-8">
-          {educationData.map((education, index) => (
+          {educationData.map((education: any, index: number) => (
             <Card
               key={index}
               className={`card-professional hover-lift transition-all duration-1000 ${
@@ -132,10 +102,10 @@ const Education = () => {
                   <div className="space-y-4">
                     <h4 className="font-semibold text-foreground flex items-center">
                       <Award className="mr-2 text-accent" size={16} />
-                      Key Areas
+                      {t('education.keyAreas')}
                     </h4>
                     <div className="space-y-2">
-                      {education.highlights.map((highlight) => (
+                      {education.highlights.map((highlight: string) => (
                         <div
                           key={highlight}
                           className="flex items-center p-2 rounded-lg bg-muted/50 border border-border/30"
@@ -159,12 +129,12 @@ const Education = () => {
           <Card className="card-professional">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-gradient mb-6 text-center">
-                Certifications & Continued Learning
+                {t('education.certificationsTitle')}
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {certifications.map((cert, index) => (
+                {certifications.map((cert: string, index: number) => (
                   <div
-                    key={cert}
+                    key={index}
                     className="flex items-center p-4 rounded-lg bg-gradient-card border border-border/30 hover:border-primary/30 transition-all duration-300"
                   >
                     <div className="w-3 h-3 rounded-full bg-secondary mr-3"></div>
@@ -182,12 +152,9 @@ const Education = () => {
         }`}>
           <Card className="card-professional max-w-3xl mx-auto">
             <CardContent className="p-8">
-              <h4 className="text-xl font-semibold text-gradient-accent mb-4">Lifelong Learning Philosophy</h4>
+              <h4 className="text-xl font-semibold text-gradient-accent mb-4">{t('education.philosophyTitle')}</h4>
               <p className="text-muted-foreground leading-relaxed">
-                My educational journey reflects a commitment to interdisciplinary learning, combining medical science
-                with cutting-edge technology. I believe in the power of continuous learning to bridge traditional
-                healthcare with innovative technological solutions, always staying current with emerging trends in
-                AI, machine learning, and digital health.
+                {t('education.philosophyText')}
               </p>
             </CardContent>
           </Card>

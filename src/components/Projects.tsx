@@ -5,11 +5,13 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { projects as projectData } from '@/data/projects';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentProject, setCurrentProject] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,7 +30,11 @@ const Projects = () => {
     return () => observer.disconnect();
   }, []);
 
-  const projects = projectData;
+  const projects = projectData.map(project => ({
+    ...project,
+    description: t(`projects.items.${project.slug}.description`) || project.description,
+    metric: t(`projects.items.${project.slug}.metric`) || project.metric
+  }));
 
   const nextProject = () => {
     setCurrentProject((prev) => (prev + 1) % projects.length);
@@ -52,10 +58,10 @@ const Projects = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="section-header mb-6">Featured Projects</h2>
+          <h2 className="section-header mb-6">{t('projects.title')}</h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Innovative solutions at the intersection of healthcare and technology
+            {t('projects.subtitle')}
           </p>
         </div>
 
@@ -68,17 +74,17 @@ const Projects = () => {
           tabIndex={0}
           onKeyDown={handleKeyDown}
         >
-          <div className="flex items-center justify-center gap-8">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             <Button
               variant="outline"
               size="icon"
               onClick={prevProject}
-              className="rounded-full border-primary/30 hover:border-primary hover:shadow-glow transition-smooth"
+              className="hidden md:flex rounded-full border-primary/30 hover:border-primary hover:shadow-glow transition-smooth flex-shrink-0"
             >
               <ChevronLeft size={20} />
             </Button>
 
-            <div className={`flex-1 max-w-4xl transition-all duration-1000 ${
+            <div className={`w-full max-w-4xl transition-all duration-1000 ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}>
               <Card className="card-professional hover-lift">
@@ -111,7 +117,7 @@ const Projects = () => {
                       </div>
 
                        <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground">Technologies Used:</h4>
+                        <h4 className="font-semibold text-foreground">{t('projects.techUsed')}</h4>
                         <div className="flex flex-wrap gap-2">
                           {projects[currentProject].technologies.slice(0, 6).map((tech) => (
                             <Badge
@@ -135,7 +141,7 @@ const Projects = () => {
                         >
                           <a href={projects[currentProject].codeUrl} target="_blank" rel="noopener noreferrer">
                             <Github className="mr-2" size={18} />
-                            View Code
+                            {t('projects.viewCode')}
                           </a>
                         </Button>
                         <Button
@@ -146,7 +152,7 @@ const Projects = () => {
                           {projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? (
                             <a href={projects[currentProject].demoUrl} target="_blank" rel="noopener noreferrer">
                               <ExternalLink className="mr-2" size={18} />
-                              Live Demo
+                              {t('projects.liveDemo')}
                             </a>
                           ) : (
                             <Button
@@ -156,7 +162,7 @@ const Projects = () => {
                             >
                               <Link to={`/projects/${projects[currentProject].slug}`}>
                                 <ExternalLink className="mr-2" size={18} />
-                                View Gallery
+                                {t('projects.viewGallery')}
                               </Link>
                             </Button>
                           )}
@@ -166,7 +172,7 @@ const Projects = () => {
                           className="ml-2"
                           asChild
                         >
-                          <Link to={`/projects/${projects[currentProject].slug}`}>View case study</Link>
+                          <Link to={`/projects/${projects[currentProject].slug}`}>{t('projects.viewCaseStudy')}</Link>
                         </Button>
                       </div>
                     </div>
@@ -189,12 +195,12 @@ const Projects = () => {
                                 className="w-32 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300"
                                 loading="lazy"
                               />
-                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
                               <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
                                 {projects[currentProject].title}
                               </p>
                               <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Click to view demo →
+                                {t('projects.clickToView')} {t('projects.demoArrow')}
                               </p>
                             </div>
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
@@ -206,12 +212,12 @@ const Projects = () => {
                                 loading="lazy"
                               />
                               <div className="relative z-10">
-                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
                                 <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
                                   {projects[currentProject].title}
                                 </p>
                                 <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                  Click to view gallery →
+                                  {t('projects.clickToView')} {t('projects.galleryArrow')}
                                 </p>
                               </div>
                             </div>
@@ -224,12 +230,12 @@ const Projects = () => {
                                 loading="lazy"
                               />
                               <div className="relative z-10">
-                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
                                 <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
                                   {projects[currentProject].title}
                                 </p>
                                 <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                  Click to view gallery →
+                                  {t('projects.clickToView')} {t('projects.galleryArrow')}
                                 </p>
                               </div>
                             </div>
@@ -238,12 +244,12 @@ const Projects = () => {
                               <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-all duration-300">
                                 <div className="w-12 h-12 bg-primary rounded-full animate-glow group-hover:scale-110 transition-transform duration-300"></div>
                               </div>
-                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
                               <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
                                 {projects[currentProject].title}
                               </p>
                               <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Click to view demo →
+                                {t('projects.clickToView')} {t('projects.demoArrow')}
                               </p>
                             </div>
                           )}
@@ -263,12 +269,12 @@ const Projects = () => {
                                 className="w-32 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300"
                                 loading="lazy"
                               />
-                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
                               <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
                                 {projects[currentProject].title}
                               </p>
                               <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Click to view details →
+                                {t('projects.clickToView')} {t('projects.detailsArrow')}
                               </p>
                             </div>
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
@@ -280,12 +286,12 @@ const Projects = () => {
                                 loading="lazy"
                               />
                               <div className="relative z-10">
-                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
                                 <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
                                   {projects[currentProject].title}
                                 </p>
                                 <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                  Click to view gallery →
+                                  {t('projects.clickToView')} {t('projects.galleryArrow')}
                                 </p>
                               </div>
                             </div>
@@ -298,12 +304,12 @@ const Projects = () => {
                                 loading="lazy"
                               />
                               <div className="relative z-10">
-                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
                                 <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
                                   {projects[currentProject].title}
                                 </p>
                                 <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                  Click to view gallery →
+                                  {t('projects.clickToView')} {t('projects.galleryArrow')}
                                 </p>
                               </div>
                             </div>
@@ -312,12 +318,12 @@ const Projects = () => {
                               <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-all duration-300">
                                 <div className="w-12 h-12 bg-primary rounded-full animate-glow group-hover:scale-110 transition-transform duration-300"></div>
                               </div>
-                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
                               <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
                                 {projects[currentProject].title}
                               </p>
                               <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Click to view details →
+                                {t('projects.clickToView')} {t('projects.detailsArrow')}
                               </p>
                             </div>
                           )}
@@ -334,44 +340,70 @@ const Projects = () => {
               variant="outline"
               size="icon"
               onClick={nextProject}
-              className="rounded-full border-primary/30 hover:border-primary hover:shadow-glow transition-smooth"
+              className="hidden md:flex rounded-full border-primary/30 hover:border-primary hover:shadow-glow transition-smooth flex-shrink-0"
             >
               <ChevronRight size={20} />
             </Button>
           </div>
 
-          {/* Project Indicators */}
-          <div className="flex justify-center mt-8 gap-2">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentProject(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentProject
-                    ? 'bg-primary shadow-glow'
-                    : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`}
-              />
-            ))}
+          {/* Project Indicators & Mobile Controls */}
+          <div className="flex flex-col items-center gap-4 mt-8">
+            {/* Mobile Navigation Buttons */}
+            <div className="flex md:hidden items-center gap-8 mb-4">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={prevProject}
+                className="rounded-full border-primary/30 hover:border-primary hover:shadow-glow transition-smooth"
+              >
+                <ChevronLeft size={20} />
+              </Button>
+              <span className="text-sm text-muted-foreground font-medium">
+                {currentProject + 1} / {projects.length}
+              </span>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={nextProject}
+                className="rounded-full border-primary/30 hover:border-primary hover:shadow-glow transition-smooth"
+              >
+                <ChevronRight size={20} />
+              </Button>
+            </div>
+
+            <div className="flex justify-center gap-2">
+              {projects.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentProject(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentProject
+                      ? 'bg-primary shadow-glow'
+                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                  }`}
+                  aria-label={`Go to project ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className={`text-center mt-16 transition-all duration-1000 delay-500 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-primary/30 hover:border-primary hover:shadow-glow transition-smooth"
-            asChild
-          >
-            <a href="https://github.com/FOKanu" target="_blank" rel="noopener noreferrer">
-              <Github className="mr-2" size={20} />
-              View All Projects on GitHub
-            </a>
-          </Button>
-        </div>
+          {/* Call to Action */}
+          <div className={`text-center mt-16 transition-all duration-1000 delay-500 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary/30 hover:border-primary hover:shadow-glow transition-smooth"
+              asChild
+            >
+              <a href="https://github.com/FOKanu" target="_blank" rel="noopener noreferrer">
+                <Github className="mr-2" size={20} />
+                {t('projects.viewAllGithub')}
+              </a>
+            </Button>
+          </div>
       </div>
     </section>
   );

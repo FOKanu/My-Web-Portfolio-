@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-bg.jpg';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsVisible(true);
@@ -37,22 +39,24 @@ const Hero = () => {
       <div className={`relative z-10 text-center px-6 transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
-        <h1 className="text-6xl md:text-8xl font-bold mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
           <span className="text-gradient animate-fade-in">Francis Kanu</span>
         </h1>
 
-        <div className={`text-2xl md:text-3xl mb-4 transition-all duration-1000 delay-300 ${
+        <div className={`text-xl sm:text-2xl md:text-3xl mb-4 transition-all duration-1000 delay-300 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <span className="text-primary font-semibold">Data Scientist</span>
-          <span className="text-muted-foreground mx-4">|</span>
-          <span className="text-secondary font-semibold">Software Engineer (Fullstack)</span>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+            <span className="text-primary font-semibold">{t('hero.role1')}</span>
+            <span className="hidden sm:inline text-muted-foreground">|</span>
+            <span className="text-secondary font-semibold">{t('hero.role2')}</span>
+          </div>
         </div>
 
         <p className={`text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto transition-all duration-1000 delay-500 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          Building intelligent tools to solve real-world problems in healthcare and beyond
+          {t('hero.description')}
         </p>
 
         {/* CTA Buttons */}
@@ -66,7 +70,7 @@ const Hero = () => {
           >
             <a href="/cv/francis-kanu-fullstack-cv.pdf" download aria-label="Download Francis Kanu CV (PDF)">
               <Download className="mr-2" size={20} />
-              Download CV
+              {t('hero.downloadCv')}
             </a>
           </Button>
 
@@ -76,7 +80,7 @@ const Hero = () => {
             className="hover:shadow-glow transition-smooth text-lg px-8 py-4 rounded-full"
             asChild
           >
-            <a href="#contact" aria-label="Contact Francis Kanu">Contact me</a>
+            <a href="#contact" aria-label="Contact Francis Kanu">{t('hero.contactMe')}</a>
           </Button>
 
           <div className="flex gap-4">

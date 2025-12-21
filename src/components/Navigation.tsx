@@ -1,23 +1,26 @@
 import { useState, useEffect } from 'react';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/ThemeToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isVisible, setIsVisible] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Education', href: '#education' },
-    { name: 'Languages', href: '#languages' },
-    { name: 'Interests', href: '#interests' },
-    { name: 'Contact', href: '#contact' }
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.skills'), href: '#skills' },
+    { name: t('nav.projects'), href: '#projects' },
+    { name: t('nav.experience'), href: '#experience' },
+    { name: t('nav.education'), href: '#education' },
+    { name: t('nav.languages'), href: '#languages' },
+    { name: t('nav.interests'), href: '#interests' },
+    { name: t('nav.contact'), href: '#contact' }
   ] as const;
 
   useEffect(() => {
@@ -49,7 +52,7 @@ const Navigation = () => {
     });
 
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       observer.disconnect();
@@ -70,8 +73,8 @@ const Navigation = () => {
           {/* Profile Avatar - Always Sticky */}
           <div className="flex-shrink-0">
             <Avatar className="w-10 h-10 sm:w-12 sm:h-12 ring-2 ring-cyan-400/50">
-              <AvatarImage 
-                src="/lovable-uploads/67c0f36c-9a89-489b-bfb6-4df41af44461.png" 
+              <AvatarImage
+                src="/lovable-uploads/67c0f36c-9a89-489b-bfb6-4df41af44461.png"
                 alt="Portrait of Francis Kanu"
                 loading="lazy"
                 className="object-cover"
@@ -101,12 +104,12 @@ const Navigation = () => {
                       aria-current={isActive ? 'page' : undefined}
                     >
                       {item.name}
-                      
+
                       {/* Active indicator */}
                       {isActive && (
                         <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 animate-pulse" />
                       )}
-                      
+
                       {/* Hover underline */}
                       <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-primary transition-all duration-300 ${
                         isActive ? 'w-full' : 'w-0 group-hover:w-3/4'
@@ -119,6 +122,14 @@ const Navigation = () => {
             </ScrollArea>
           </div>
           <ThemeToggle />
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setLanguage(language === 'en' ? 'de' : 'en')}
+            className="w-10 h-10 rounded-full bg-background/50 hover:bg-background/80"
+          >
+            {language.toUpperCase()}
+          </Button>
         </div>
       </div>
     </nav>

@@ -1,21 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
-import { 
-  BookOpen, 
-  Gamepad2, 
-  Film, 
-  MessageSquare, 
-  Dumbbell, 
+import {
+  BookOpen,
+  Gamepad2,
+  Film,
+  MessageSquare,
+  Dumbbell,
   Theater,
   PenTool,
   Brain,
-  Sparkles 
+  Sparkles
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Interests = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredInterest, setHoveredInterest] = useState<string | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,65 +38,65 @@ const Interests = () => {
 
   const interests = [
     {
-      name: 'Creative Writing',
+      name: t('interests.items.writing.name'),
       icon: PenTool,
-      description: 'Currently working on horror novel "A Devil for Jane" and philosophical work "Of God and Man"',
+      description: t('interests.items.writing.description'),
       color: 'text-primary',
       bgColor: 'bg-primary/10',
       hoverColor: 'hover:bg-primary/20'
     },
     {
-      name: 'Gaming',
+      name: t('interests.items.gaming.name'),
       icon: Gamepad2,
-      description: 'Strategic and narrative-driven games, exploring virtual worlds and complex gameplay mechanics',
+      description: t('interests.items.gaming.description'),
       color: 'text-secondary',
       bgColor: 'bg-secondary/10',
       hoverColor: 'hover:bg-secondary/20'
     },
     {
-      name: 'Movies & Documentaries',
+      name: t('interests.items.movies.name'),
       icon: Film,
-      description: 'Film analysis, documentaries, and exploring diverse cinematic storytelling techniques',
+      description: t('interests.items.movies.description'),
       color: 'text-accent',
       bgColor: 'bg-accent/10',
       hoverColor: 'hover:bg-accent/20'
     },
     {
-      name: 'Social Debates',
+      name: t('interests.items.debates.name'),
       icon: MessageSquare,
-      description: 'Engaging in intellectual discussions about philosophy, ethics, and contemporary issues',
+      description: t('interests.items.debates.description'),
       color: 'text-primary-glow',
       bgColor: 'bg-primary/5',
       hoverColor: 'hover:bg-primary/15'
     },
     {
-      name: 'Fitness & Working Out',
+      name: t('interests.items.fitness.name'),
       icon: Dumbbell,
-      description: 'Maintaining physical health through regular exercise and strength training',
+      description: t('interests.items.fitness.description'),
       color: 'text-secondary',
       bgColor: 'bg-secondary/10',
       hoverColor: 'hover:bg-secondary/20'
     },
     {
-      name: 'Classical Literature',
+      name: t('interests.items.literature.name'),
       icon: BookOpen,
-      description: 'Deep appreciation for classical works and theatrical performances',
+      description: t('interests.items.literature.description'),
       color: 'text-accent',
       bgColor: 'bg-accent/10',
       hoverColor: 'hover:bg-accent/20'
     },
     {
-      name: 'Philosophy',
+      name: t('interests.items.philosophy.name'),
       icon: Brain,
-      description: 'Exploring philosophical concepts, ethics, and the intersection of science and humanities',
+      description: t('interests.items.philosophy.description'),
       color: 'text-primary',
       bgColor: 'bg-primary/10',
       hoverColor: 'hover:bg-primary/20'
     },
     {
-      name: 'Theatre',
+      name: t('interests.items.theatre.name'),
       icon: Theater,
-      description: 'Appreciation for dramatic arts and live performance storytelling',
+      description: t('interests.items.theatre.description'),
       color: 'text-primary-glow',
       bgColor: 'bg-primary/5',
       hoverColor: 'hover:bg-primary/15'
@@ -107,10 +109,10 @@ const Interests = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="section-header mb-6">Interests & Passions</h2>
+          <h2 className="section-header mb-6">{t('interests.title')}</h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Beyond technology and medicine, exploring creativity and intellectual pursuits
+            {t('interests.subtitle')}
           </p>
         </div>
 
@@ -125,25 +127,25 @@ const Interests = () => {
                   className={`transition-all duration-1000 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
-                  style={{ 
+                  style={{
                     animationDelay: `${index * 100}ms`,
                     transform: isVisible ? `translateY(${Math.sin(index * 0.5) * 10}px)` : 'translateY(32px)'
                   }}
                   onMouseEnter={() => setHoveredInterest(interest.name)}
                   onMouseLeave={() => setHoveredInterest(null)}
                 >
-                  <Card 
+                  <Card
                     className={`card-professional cursor-pointer transition-all duration-300 hover-lift
                       ${interest.bgColor} ${interest.hoverColor} border-border/50 hover:border-primary/30
                       ${hoveredInterest === interest.name ? 'scale-105 shadow-glow' : 'hover:scale-102'}
                     `}
                   >
                     <CardContent className="p-6 text-center">
-                      <div className={`inline-flex p-4 rounded-full ${interest.bgColor} mb-4 transition-all duration-300 
+                      <div className={`inline-flex p-4 rounded-full ${interest.bgColor} mb-4 transition-all duration-300
                         ${hoveredInterest === interest.name ? 'scale-110' : ''}`}>
-                        <IconComponent 
-                          className={`${interest.color} transition-all duration-300`} 
-                          size={24} 
+                        <IconComponent
+                          className={`${interest.color} transition-all duration-300`}
+                          size={24}
                         />
                       </div>
                       <h3 className="font-semibold text-foreground mb-2 text-sm">
@@ -172,19 +174,19 @@ const Interests = () => {
             <CardContent className="p-8 text-center">
               <div className="flex items-center justify-center mb-4">
                 <Sparkles className="text-primary mr-2" size={24} />
-                <h3 className="text-xl font-bold text-gradient">Current Creative Projects</h3>
+                <h3 className="text-xl font-bold text-gradient">{t('interests.currentProjectsTitle')}</h3>
               </div>
               <div className="grid md:grid-cols-2 gap-6 mt-6">
                 <div className="p-4 bg-background/50 rounded-lg border border-border/30">
-                  <h4 className="font-semibold text-primary mb-2">📚 "A Devil for Jane"</h4>
+                  <h4 className="font-semibold text-primary mb-2">{t('interests.project1.title')}</h4>
                   <p className="text-sm text-muted-foreground">
-                    A psychological horror novel exploring themes of morality and human nature
+                    {t('interests.project1.desc')}
                   </p>
                 </div>
                 <div className="p-4 bg-background/50 rounded-lg border border-border/30">
-                  <h4 className="font-semibold text-accent mb-2">🧠 "Of God and Man"</h4>
+                  <h4 className="font-semibold text-accent mb-2">{t('interests.project2.title')}</h4>
                   <p className="text-sm text-muted-foreground">
-                    A philosophical work examining the intersection of faith, science, and human existence
+                    {t('interests.project2.desc')}
                   </p>
                 </div>
               </div>

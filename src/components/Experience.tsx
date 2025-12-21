@@ -3,10 +3,12 @@ import { Calendar, MapPin, Building2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import experienceBg from '@/assets/hero-bg.jpg';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,80 +27,7 @@ const Experience = () => {
     return () => observer.disconnect();
   }, []);
 
-  const experiences = [
-    {
-      title: 'Front Office and Reservations Agent',
-      company: 'INNSiDE by Meliá Berlin Mitte',
-      location: 'Berlin, Germany',
-      period: 'Sep 2023 — Jan 2025',
-      type: 'Full-time',
-      description: 'Delivered exceptional guest services through professional check-in, check-out, and concierge support. Handled reservations and managed booking systems to maximize efficiency. Resolved guest concerns with empathy and speed, ensuring high satisfaction. Collaborated with housekeeping, events, and sales departments to maintain smooth daily operations. Supported administrative tasks including billing, reporting, and database entry.',
-      skills: ['Guest Services', 'Reservation Management', 'Problem Resolution', 'Interdepartmental Coordination', 'Administrative Support']
-    },
-    {
-      title: 'Event Service Agent',
-      company: 'Soho House',
-      location: 'Berlin, Germany',
-      period: 'Apr 2022 — Nov 2022',
-      type: 'Contract',
-      description: 'Assisted in planning and executing events, ensuring smooth setup and guest experience. Coordinated logistics between catering, operations, and client teams. Provided on-site guest support and troubleshooting during events. Ensured high service standards were met across private and corporate functions.',
-      skills: ['Event Planning', 'Logistics Coordination', 'Guest Support', 'Service Standards', 'Troubleshooting']
-    },
-    {
-      title: 'Medical Billing and Collections Specialist',
-      company: 'Billing Nerds',
-      location: 'Brooklyn, New York, USA',
-      period: 'Mar 2021 — Feb 2022',
-      type: 'Remote',
-      description: 'Processed medical billing claims and managed account receivables for healthcare clients. Verified insurance information and ensured compliance with medical coding standards. Communicated with patients and insurers to resolve outstanding balances. Improved billing accuracy and reduced rejected claims through detailed review.',
-      skills: ['Medical Billing', 'Insurance Verification', 'Compliance Management', 'Patient Communication', 'Claims Processing']
-    },
-    {
-      title: 'Telemetric Data Analyst',
-      company: 'Glutality Inc',
-      location: 'Boca Raton, Florida, USA',
-      period: '2019 — 2021',
-      type: 'Remote',
-      description: 'Analyzed telemetric patient health data to support medical decision-making. Collaborated with clinical teams to identify irregularities and escalate cases. Produced detailed analytical reports for doctors and stakeholders. Maintained data accuracy and integrity across health monitoring platforms.',
-      skills: ['Data Analysis', 'Clinical Collaboration', 'Report Generation', 'Data Integrity', 'Health Monitoring']
-    },
-    {
-      title: 'ESL Teacher and Methodologist',
-      company: 'SKYENG',
-      location: 'Moscow, Russia',
-      period: 'Dec 2017 — Nov 2019',
-      type: 'Remote',
-      description: 'Taught English as a Second Language to diverse international students. Designed personalized lesson plans tailored to learners\' needs. Mentored and trained junior teachers in effective teaching methods. Leveraged digital platforms to deliver engaging online classes.',
-      skills: ['ESL Teaching', 'Curriculum Design', 'Teacher Training', 'Online Education', 'Student Mentoring']
-    },
-    {
-      title: 'Administrative Assistant',
-      company: 'Kharkiv Youth City Council (NGO)',
-      location: 'Kharkiv, Ukraine',
-      period: 'Nov 2017 — Nov 2019',
-      type: 'Volunteer',
-      description: 'Assisted in coordinating youth programs and civic engagement projects. Supported documentation, scheduling, and meeting preparation. Provided administrative support to NGO leadership and partners.',
-      skills: ['Program Coordination', 'Documentation', 'Meeting Preparation', 'NGO Support', 'Civic Engagement']
-    },
-    {
-      title: 'Secretarial Assistance',
-      company: 'Berean Hope Mission (NGO)',
-      location: 'Accra, Ghana',
-      period: 'Sep 2014 — Sep 2016',
-      type: 'Volunteer',
-      description: 'Provided clerical and secretarial support for NGO operations. Assisted in organizing community programs and outreach initiatives. Maintained correspondence and records for ongoing projects.',
-      skills: ['Clerical Support', 'Community Programs', 'Record Management', 'Correspondence', 'Outreach Coordination']
-    },
-    {
-      title: 'Clinical Secretariat',
-      company: 'Korle-Bu Teaching Hospital, Department of Child Health',
-      location: 'Accra, Ghana',
-      period: 'Oct 2013 — Aug 2016',
-      type: 'Administrative',
-      description: 'Supported the Child Health department with clerical and patient record management. Coordinated appointment scheduling and departmental communications. Assisted medical staff with documentation and reporting. Ensured compliance with hospital administrative standards.',
-      skills: ['Patient Records', 'Appointment Scheduling', 'Medical Documentation', 'Hospital Compliance', 'Departmental Coordination']
-    }
-  ];
+  const experiences = t('experience.jobs');
 
   return (
     <section ref={sectionRef} id="experience" className="relative overflow-hidden py-20 bg-muted/30">
@@ -115,10 +44,10 @@ const Experience = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="section-header mb-6">Professional Experience</h2>
+          <h2 className="section-header mb-6">{t('experience.title')}</h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A diverse journey through healthcare, technology, and international business
+            {t('experience.subtitle')}
           </p>
         </div>
 
@@ -126,9 +55,9 @@ const Experience = () => {
           {/* Timeline */}
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-accent"></div>
+            <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-accent"></div>
 
-            {experiences.map((experience, index) => (
+            {experiences.map((experience: any, index: number) => (
               <div
                 key={index}
                 className={`relative pb-12 transition-all duration-1000 ${
@@ -137,10 +66,10 @@ const Experience = () => {
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-6 w-5 h-5 bg-primary rounded-full border-4 border-background shadow-glow"></div>
+                <div className="absolute left-2 md:left-6 w-5 h-5 bg-primary rounded-full border-4 border-background shadow-glow"></div>
 
                 {/* Content */}
-                <div className="ml-20">
+                <div className="ml-12 md:ml-20">
                   <Card className="card-professional hover-lift">
                     <CardContent className="p-6">
                       <div className="flex flex-col lg:flex-row lg:items-start justify-between mb-4">
@@ -174,9 +103,9 @@ const Experience = () => {
                       </p>
 
                       <div className="space-y-2">
-                        <h4 className="font-medium text-foreground text-sm">Key Skills:</h4>
+                        <h4 className="font-medium text-foreground text-sm">{t('experience.labels.keySkills')}</h4>
                         <div className="flex flex-wrap gap-2">
-                          {experience.skills.map((skill) => (
+                          {experience.skills.map((skill: string) => (
                             <Badge
                               key={skill}
                               variant="secondary"
@@ -202,28 +131,28 @@ const Experience = () => {
           <Card className="card-professional text-center">
             <CardContent className="p-6">
               <div className="text-2xl font-bold text-primary mb-1">14+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
+              <div className="text-sm text-muted-foreground">{t('experience.stats.years')}</div>
             </CardContent>
           </Card>
 
           <Card className="card-professional text-center">
             <CardContent className="p-6">
               <div className="text-2xl font-bold text-secondary mb-1">5+</div>
-              <div className="text-sm text-muted-foreground">Different Roles</div>
+              <div className="text-sm text-muted-foreground">{t('experience.stats.roles')}</div>
             </CardContent>
           </Card>
 
           <Card className="card-professional text-center">
             <CardContent className="p-6">
               <div className="text-2xl font-bold text-accent mb-1">3</div>
-              <div className="text-sm text-muted-foreground">Countries</div>
+              <div className="text-sm text-muted-foreground">{t('experience.stats.countries')}</div>
             </CardContent>
           </Card>
 
           <Card className="card-professional text-center">
             <CardContent className="p-6">
               <div className="text-2xl font-bold text-primary-glow mb-1">7+</div>
-              <div className="text-sm text-muted-foreground">Languages</div>
+              <div className="text-sm text-muted-foreground">{t('experience.stats.languages')}</div>
             </CardContent>
           </Card>
         </div>
