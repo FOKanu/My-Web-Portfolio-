@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -148,10 +149,16 @@ const Projects = () => {
                               Live Demo
                             </a>
                           ) : (
-                            <a href={`/projects/${projects[currentProject].slug}`}>
-                              <ExternalLink className="mr-2" size={18} />
-                              View Gallery
-                            </a>
+                            <Button
+                              variant="outline"
+                              className="border-primary/30 hover:border-primary transition-smooth"
+                              asChild
+                            >
+                              <Link to={`/projects/${projects[currentProject].slug}`}>
+                                <ExternalLink className="mr-2" size={18} />
+                                View Gallery
+                              </Link>
+                            </Button>
                           )}
                         </Button>
                         <Button
@@ -159,21 +166,22 @@ const Projects = () => {
                           className="ml-2"
                           asChild
                         >
-                          <a href={`/projects/${projects[currentProject].slug}`}>View case study</a>
+                          <Link to={`/projects/${projects[currentProject].slug}`}>View case study</Link>
                         </Button>
                       </div>
                     </div>
 
                     {/* Project Visual */}
                     <div className="relative">
-                      <a
-                        href={projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? projects[currentProject].demoUrl : `/projects/${projects[currentProject].slug}`}
-                        target={projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? "_blank" : "_self"}
-                        rel="noopener noreferrer"
-                        className="block cursor-pointer group"
-                      >
-                        <div className="aspect-video bg-gradient-card rounded-lg border border-border/50 flex items-center justify-center group-hover:border-primary/50 group-hover:shadow-glow transition-all duration-300">
-                          {projects[currentProject].title === 'Skin Check AI' ? (
+                      {projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? (
+                        <a
+                          href={projects[currentProject].demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block cursor-pointer group"
+                        >
+                          <div className="aspect-video bg-gradient-card rounded-lg border border-border/50 flex items-center justify-center group-hover:border-primary/50 group-hover:shadow-glow transition-all duration-300">
+                             {projects[currentProject].title === 'Skin Check AI' ? (
                             <div className="text-center p-8">
                               <img
                                 src="/images/projects/skin-check-ai-logo.png"
@@ -186,7 +194,7 @@ const Projects = () => {
                                 {projects[currentProject].title}
                               </p>
                               <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                {projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? 'Click to view demo →' : 'Click to view gallery →'}
+                                Click to view demo →
                               </p>
                             </div>
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
@@ -202,7 +210,7 @@ const Projects = () => {
                                 {projects[currentProject].title}
                               </p>
                               <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                {projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? 'Click to view demo →' : 'Click to view gallery →'}
+                                Click to view demo →
                               </p>
                             </div>
                           ) : projects[currentProject].title === 'Aria Agentic System' ? (
@@ -233,12 +241,85 @@ const Projects = () => {
                                 {projects[currentProject].title}
                               </p>
                               <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                {projects[currentProject].demoUrl && projects[currentProject].demoUrl !== '#' ? 'Click to view demo →' : 'Click to view details →'}
+                                Click to view demo →
                               </p>
                             </div>
                           )}
-                        </div>
-                      </a>
+                          </div>
+                        </a>
+                      ) : (
+                        <Link
+                          to={`/projects/${projects[currentProject].slug}`}
+                          className="block cursor-pointer group"
+                        >
+                          <div className="aspect-video bg-gradient-card rounded-lg border border-border/50 flex items-center justify-center group-hover:border-primary/50 group-hover:shadow-glow transition-all duration-300">
+                             {projects[currentProject].title === 'Skin Check AI' ? (
+                            <div className="text-center p-8">
+                              <img
+                                src="/images/projects/skin-check-ai-logo.png"
+                                alt="Skin Check AI project logo"
+                                className="w-32 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300"
+                                loading="lazy"
+                              />
+                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                              <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                {projects[currentProject].title}
+                              </p>
+                              <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Click to view details →
+                              </p>
+                            </div>
+                          ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
+                            <div className="text-center p-8">
+                              <img
+                                src="/images/projects/doctai-logo.png"
+                                alt="DoctAI Health Hub project logo"
+                                className="w-40 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300 rounded-lg"
+                                loading="lazy"
+                              />
+                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                              <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                {projects[currentProject].title}
+                              </p>
+                              <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Click to view details →
+                              </p>
+                            </div>
+                          ) : projects[currentProject].title === 'Aria Agentic System' ? (
+                            <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
+                              <img
+                                src="/images/projects/aria-agentic-system/03-home-page.png"
+                                alt="Aria Agentic System project preview"
+                                className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
+                                loading="lazy"
+                              />
+                              <div className="relative z-10">
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                                <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                  {projects[currentProject].title}
+                                </p>
+                                <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  Click to view gallery →
+                                </p>
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="text-center p-8">
+                              <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-all duration-300">
+                                <div className="w-12 h-12 bg-primary rounded-full animate-glow group-hover:scale-110 transition-transform duration-300"></div>
+                              </div>
+                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">Project Preview</p>
+                              <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                {projects[currentProject].title}
+                              </p>
+                              <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Click to view details →
+                              </p>
+                            </div>
+                          )}
+                          </div>
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </CardContent>
