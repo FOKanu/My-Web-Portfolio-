@@ -192,20 +192,22 @@ const Projects = () => {
                         >
                           <div className="aspect-video bg-gradient-card rounded-lg border border-border/50 flex items-center justify-center group-hover:border-primary/50 group-hover:shadow-glow transition-all duration-300">
                              {projects[currentProject].title === 'Skin Check AI' ? (
-                            <div className="text-center p-8">
+                            <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
                               <img
                                 src="/images/projects/skin-check-ai-logo.png"
                                 alt="Skin Check AI project logo"
-                                className="w-32 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300"
+                                className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
                                 loading="lazy"
                               />
-                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
-                              <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
-                                {projects[currentProject].title}
-                              </p>
-                              <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                {t('projects.clickToView')} {t('projects.demoArrow')}
-                              </p>
+                              <div className="relative z-10">
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
+                                <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                  {projects[currentProject].title}
+                                </p>
+                                <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  {t('projects.clickToView')} {t('projects.demoArrow')}
+                                </p>
+                              </div>
                             </div>
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
                             <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
@@ -266,20 +268,22 @@ const Projects = () => {
                         >
                           <div className="aspect-video bg-gradient-card rounded-lg border border-border/50 flex items-center justify-center group-hover:border-primary/50 group-hover:shadow-glow transition-all duration-300">
                              {projects[currentProject].title === 'Skin Check AI' ? (
-                            <div className="text-center p-8">
+                            <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
                               <img
                                 src="/images/projects/skin-check-ai-logo.png"
                                 alt="Skin Check AI project logo"
-                                className="w-32 h-32 object-contain mx-auto mb-4 group-hover:scale-105 transition-transform duration-300"
+                                className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
                                 loading="lazy"
                               />
-                              <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
-                              <p className="text-sm text-muted-foreground/70 mt-2 group-hover:text-primary/70 transition-colors duration-300">
-                                {projects[currentProject].title}
-                              </p>
-                              <p className="text-xs text-primary/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                {t('projects.clickToView')} {t('projects.detailsArrow')}
-                              </p>
+                              <div className="relative z-10">
+                                <p className="text-foreground font-bold text-xl group-hover:text-primary transition-colors duration-300">{t('projects.preview')}</p>
+                                <p className="text-sm text-muted-foreground mt-2 group-hover:text-primary/70 transition-colors duration-300">
+                                  {projects[currentProject].title}
+                                </p>
+                                <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  {t('projects.clickToView')} {t('projects.detailsArrow')}
+                                </p>
+                              </div>
                             </div>
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
                             <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
