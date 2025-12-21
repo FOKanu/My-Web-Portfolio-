@@ -172,7 +172,7 @@ export const translations = {
       degrees: [
         {
           degree: 'BSc IT - Web Applications and Software Development',
-          institution: 'Mediendesign Hochschule für Angewandte Wissenschaften',
+          institution: 'Media Design University of Applied Sciences',
           location: 'Berlin, Germany',
           period: 'Present',
           status: 'Currently Enrolled',
