@@ -248,7 +248,7 @@ const Projects = () => {
                           ) : projects[currentProject].title === 'Oasis Finance' ? (
                             <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
                               <img
-                                src="/images/projects/oasis-finance/dashboard.png"
+                                src="/images/projects/oasis-finance/02-dashboard.png"
                                 alt="Oasis Finance project preview"
                                 className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
                                 loading="lazy"
@@ -342,7 +342,7 @@ const Projects = () => {
                           ) : projects[currentProject].title === 'Oasis Finance' ? (
                             <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
                               <img
-                                src="/images/projects/oasis-finance/dashboard.png"
+                                src="/images/projects/oasis-finance/02-dashboard.png"
                                 alt="Oasis Finance project preview"
                                 className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
                                 loading="lazy"
