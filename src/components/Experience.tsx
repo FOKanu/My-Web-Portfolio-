@@ -151,7 +151,7 @@ const Experience = () => {
 
           <Card className="card-professional text-center">
             <CardContent className="p-6">
-              <div className="text-2xl font-bold text-primary-glow mb-1">7+</div>
+              <div className="text-2xl font-bold text-primary-glow mb-1">6</div>
               <div className="text-sm text-muted-foreground">{t('experience.stats.languages')}</div>
             </CardContent>
           </Card>
