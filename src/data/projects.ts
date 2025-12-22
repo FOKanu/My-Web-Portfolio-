@@ -107,28 +107,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'skin-check-ai',
-    title: 'Skin Check AI',
-    description:
-      'AI-powered skin lesion detection mobile application using computer vision and deep learning to assist in early dermatological diagnosis.',
-    technologies: [
-      'React Native',
-      'Expo',
-      'Supabase',
-      'TensorFlow',
-      'OpenCV',
-      'React Navigation',
-      'Expo Camera',
-      'React Native Calendars',
-    ],
-    category: 'AI/ML Healthcare',
-    status: 'Production',
-    image: 'skin-check-ai',
-    demoUrl: 'https://github.com/FOKanu/SkinCancerCheckMobile',
-    codeUrl: 'https://github.com/FOKanu/SkinCancerCheckMobile',
-    metric: 'Used by early testers to triage 100+ skin photos',
-  },
-  {
     slug: 'oasis-finance',
     title: 'Oasis Finance',
     description:
@@ -161,6 +139,28 @@ export const projects: Project[] = [
       '/images/projects/oasis-finance/10-insights.png',
       '/images/projects/oasis-finance/11-data-upload.png',
     ],
+  },
+  {
+    slug: 'skin-check-ai',
+    title: 'Skin Check AI',
+    description:
+      'AI-powered skin lesion detection mobile application using computer vision and deep learning to assist in early dermatological diagnosis.',
+    technologies: [
+      'React Native',
+      'Expo',
+      'Supabase',
+      'TensorFlow',
+      'OpenCV',
+      'React Navigation',
+      'Expo Camera',
+      'React Native Calendars',
+    ],
+    category: 'AI/ML Healthcare',
+    status: 'Production',
+    image: 'skin-check-ai',
+    demoUrl: 'https://github.com/FOKanu/SkinCancerCheckMobile',
+    codeUrl: 'https://github.com/FOKanu/SkinCancerCheckMobile',
+    metric: 'Used by early testers to triage 100+ skin photos',
   },
   {
     slug: 'berlin-connect',
