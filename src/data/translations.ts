@@ -85,6 +85,10 @@ export const translations = {
         'berlin-connect': {
           description: 'AI-powered social discovery platform for Berlin. Features smart algorithms for personalized event recommendations and connecting users with shared professional and personal interests.',
           metric: 'Smart Discovery Algorithm for Personalized Matching'
+        },
+        'emotion-classification-ml': {
+          description: 'Trained Hybrid CNN Transform model to classify human emotions based on Facial Expression. Complements a mobile application\'s facial recognition system.',
+          metric: 'Achieved >81% accuracy with Hybrid CNN-Transformer model'
         }
       }
     },
@@ -374,6 +378,10 @@ export const translations = {
         'berlin-connect': {
           description: 'KI-gestützte soziale Entdeckungsplattform für Berlin. Verfügt über intelligente Algorithmen für personalisierte Veranstaltungsempfehlungen und verbindet Nutzer mit gemeinsamen beruflichen und persönlichen Interessen.',
           metric: 'Intelligenter Entdeckungsalgorithmus für personalisiertes Matching'
+        },
+        'emotion-classification-ml': {
+          description: 'Trainiertes hybrides CNN-Transformer-Modell zur Klassifizierung menschlicher Emotionen basierend auf Gesichtsausdrücken. Ergänzt das Gesichtserkennungssystem einer mobilen Anwendung.',
+          metric: 'Erreichte >81% Genauigkeit mit Hybridem CNN-Transformer-Modell'
         }
       }
     },
