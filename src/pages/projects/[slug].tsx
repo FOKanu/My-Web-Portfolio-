@@ -1,7 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import { ArrowLeft } from 'lucide-react';
 import { getProjectBySlug } from '@/data/projects';
 import Navigation from '@/components/Navigation';
+import { Button } from '@/components/ui/button';
 import Footer from '@/components/Footer';
 
 const ProjectDetail = () => {
@@ -52,6 +54,17 @@ const ProjectDetail = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <main className="container mx-auto px-6 py-20">
+        <Button
+          variant="ghost"
+          className="mb-8 pl-0 hover:bg-transparent hover:text-primary transition-colors group"
+          asChild
+        >
+          <Link to="/#projects" className="flex items-center gap-2 text-muted-foreground group-hover:text-primary">
+            <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+            Back to Projects
+          </Link>
+        </Button>
+
         <h1 className="text-4xl font-bold text-gradient mb-4">{project.title}</h1>
         <p className="text-muted-foreground mb-8 max-w-3xl">{project.description}</p>
 
