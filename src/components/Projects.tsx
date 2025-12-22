@@ -212,7 +212,7 @@ const Projects = () => {
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
                             <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
                               <img
-                                src="/images/projects/doctai-health-hub/02-dashboard-1.png"
+                                src="/images/projects/doctai-health-hub/04-dashboard.png"
                                 alt="DoctAI Health Hub project preview"
                                 className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
                                 loading="lazy"
@@ -306,7 +306,7 @@ const Projects = () => {
                           ) : projects[currentProject].title === 'DoctAI Health Hub' ? (
                             <div className="text-center p-8 w-full h-full flex flex-col items-center justify-center">
                               <img
-                                src="/images/projects/doctai-health-hub/02-dashboard-1.png"
+                                src="/images/projects/doctai-health-hub/04-dashboard.png"
                                 alt="DoctAI Health Hub project preview"
                                 className="w-full h-full object-cover absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-300"
                                 loading="lazy"
