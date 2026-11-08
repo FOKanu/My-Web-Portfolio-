@@ -93,7 +93,7 @@ const About = () => {
 
               <Card className="card-professional hover-lift">
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary-glow mb-2">11</div>
+                  <div className="text-3xl font-bold text-primary-glow mb-2">12</div>
                   <div className="text-sm text-muted-foreground">{t('about.stats.publicRepositories')}</div>
                 </CardContent>
               </Card>

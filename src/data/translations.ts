@@ -37,7 +37,7 @@ export const translations = {
       location: 'Berlin, Germany • German Work Permit',
       availability: 'Available for immediate opportunities',
       multilingualTitle: 'Multilingual & Creative',
-      multilingualText1: 'Languages: 6 languages across 3 continents',
+      multilingualText1: 'Languages: 4 languages across 3 continents',
       multilingualText2: 'Focus: Creative writing, philosophy, and intellectual pursuits',
     },
     skills: {
@@ -45,9 +45,9 @@ export const translations = {
       subtitle: 'A comprehensive toolkit combining medical expertise with modern technology',
       categories: {
         programming: 'Programming Languages',
-        frameworks: 'Frameworks & Libraries',
+        frameworks: 'Data Analysis & Visualisation',
         ml: 'Machine Learning',
-        cloud: 'Cloud & DevOps',
+        cloud: 'LLM Applications',
         databases: 'Databases',
         tools: 'Tools & Platforms',
       },
@@ -100,40 +100,49 @@ export const translations = {
       subtitle: 'A diverse journey through healthcare, technology, and international business',
       jobs: [
         {
-          title: 'Front Office Employee and Night Auditor',
-          company: 'INNSiDE by Meliá Berlin Mitte',
-          location: 'Berlin, Germany',
-          period: 'Sep 2023 — Jan 2025',
-          type: 'Full-time',
-          description: 'Delivered exceptional guest services through professional check-in, check-out, and concierge support. Handled reservations and managed booking systems to maximize efficiency. Resolved guest concerns with empathy and speed, ensuring high satisfaction. Collaborated with housekeeping, events, and sales departments to maintain smooth daily operations. Supported administrative tasks including billing, reporting, and database entry.',
-          skills: ['Guest Services', 'Reservation Management', 'Problem Resolution', 'Interdepartmental Coordination', 'Administrative Support']
+          title: 'Artificial Intelligence Consultant (Freelance)',
+          company: 'Fiverr',
+          location: 'Berlin, Germany (Remote)',
+          period: 'Feb 2026 — Present',
+          type: 'Freelance',
+          description: 'Train corporate employees on emerging AI technologies and AI-powered workflow management tools. Help clients identify AI business use cases and where AI fits into their existing workflows.',
+          skills: ['AI Training', 'AI Workflow Tools', 'Use-Case Analysis', 'Prompt Engineering', 'Consulting']
         },
         {
-          title: 'Medical Billing and Customer Support',
+          title: 'Front Desk Representative',
+          company: 'Meliá Hotels International',
+          location: 'Berlin, Germany',
+          period: 'Sep 2023 — Dec 2024',
+          type: 'Full-time',
+          description: 'Managed multi-channel reservations via phone, email, booking platforms (Booking.com, Expedia), and in person, working across SynXis, Sabre, and Amadeus.',
+          skills: ['Guest Services', 'Reservation Systems (SynXis, Sabre, Amadeus)', 'Multi-channel Communication', 'Problem Resolution']
+        },
+        {
+          title: 'IT Support and Service Desk (Part-time, Remote)',
           company: 'Billing Nerds',
-          location: 'Brooklyn, New York, USA',
+          location: 'Brooklyn, NY, USA',
           period: 'Mar 2021 — Feb 2022',
           type: 'Remote, Part-time',
-          description: 'Processed medical billing claims and managed account receivables for healthcare clients. Verified insurance information and ensured compliance with medical coding standards. Communicated with patients and insurers to resolve outstanding balances. Improved billing accuracy and reduced rejected claims through detailed review.',
-          skills: ['Medical Billing', 'Insurance Verification', 'Compliance Management', 'Patient Communication', 'Claims Processing']
+          description: 'Performed data entry, document verification, and health-insurance eligibility checks, keeping medical records accurately categorised. Generated reports on billed treatments and resolved rejected claims with major health-insurance providers.',
+          skills: ['IT Support', 'Document Verification', 'Insurance Eligibility Checks', 'Reporting', 'Claims Resolution']
         },
         {
-          title: 'Data Analyst',
-          company: 'Glutality Inc',
-          location: 'Boca Raton, Florida, USA',
+          title: 'Data Analyst and Solutions Engineer (Part-time, Remote)',
+          company: 'Glutality',
+          location: 'Boca Raton, FL, USA',
           period: 'Apr 2019 — Mar 2021',
           type: 'Remote, Part-time',
-          description: 'Analyzed telemetric patient health data to support medical decision-making. Collaborated with clinical teams to identify irregularities and escalate cases. Produced detailed analytical reports for doctors and stakeholders. Maintained data accuracy and integrity across health monitoring platforms.',
-          skills: ['Data Analysis', 'Clinical Collaboration', 'Report Generation', 'Data Integrity', 'Health Monitoring']
+          description: 'Built real-time dashboards and reports in Power BI, Tableau, and Grafana. Prepared and analysed data with SQL and Python (Pandas, NumPy), applying basic data-engineering practices.',
+          skills: ['SQL', 'Python (Pandas, NumPy)', 'Power BI', 'Tableau', 'Grafana', 'Data Engineering Basics']
         },
         {
-          title: 'ESL Teacher and Methodologist',
-          company: 'SKYENG',
-          location: 'Moscow, Russia',
+          title: 'English Teacher and Methodologist',
+          company: 'Skyeng',
+          location: 'Moscow, Russia (Remote)',
           period: 'Dec 2017 — Nov 2019',
           type: 'Remote, Freelance',
-          description: 'Taught English as a Second Language to diverse international students. Designed personalized lesson plans tailored to learners\' needs. Mentored and trained junior teachers in effective teaching methods. Leveraged digital platforms to deliver engaging online classes.',
-          skills: ['ESL Teaching', 'Curriculum Design', 'Teacher Training', 'Online Education', 'Student Mentoring']
+          description: 'Taught English to diverse international students. Designed personalized lesson plans tailored to learners\' needs. Mentored and trained junior teachers in effective teaching methods. Leveraged digital platforms to deliver engaging online classes.',
+          skills: ['English Teaching', 'Curriculum Design', 'Teacher Training', 'Online Education', 'Student Mentoring']
         },
         {
           title: 'Administrative Secretary',
@@ -145,22 +154,13 @@ export const translations = {
           skills: ['Program Coordination', 'Documentation', 'Meeting Preparation', 'NGO Support', 'Civic Engagement']
         },
         {
-          title: 'Administrative Secretary',
-          company: 'Berean Hope Mission (NGO)',
-          location: 'Accra, Ghana',
-          period: 'Sep 2014 — Sep 2016',
-          type: 'Weekend Volunteer, Part-time',
-          description: 'Provided clerical and secretarial support for NGO operations. Assisted in organizing community programs and outreach initiatives. Maintained correspondence and records for ongoing projects.',
-          skills: ['Clerical Support', 'Community Programs', 'Record Management', 'Correspondence', 'Outreach Coordination']
-        },
-        {
           title: 'Clinical Secretariat',
-          company: 'Korle-Bu Teaching Hospital, Department of Child Health',
+          company: 'Korle-Bu Teaching Hospital',
           location: 'Accra, Ghana',
           period: 'Oct 2013 — Aug 2016',
           type: 'Full-time',
-          description: 'Supported the Child Health department with clerical and patient record management. Coordinated appointment scheduling and departmental communications. Assisted medical staff with documentation and reporting. Ensured compliance with hospital administrative standards.',
-          skills: ['Patient Records', 'Appointment Scheduling', 'Medical Documentation', 'Hospital Compliance', 'Departmental Coordination']
+          description: 'Supported the Child Health department with clerical and patient record management. Coordinated appointment scheduling and departmental communications. Assisted medical staff with documentation and reporting.',
+          skills: ['Patient Records', 'Appointment Scheduling', 'Medical Documentation', 'Departmental Coordination']
         }
       ],
       stats: {
@@ -178,16 +178,16 @@ export const translations = {
       subtitle: 'Continuous learning journey bridging medicine, technology, and innovation',
       degrees: [
         {
-          degree: 'BSc IT - Web Applications and Software Development',
-          institution: 'Media Design University of Applied Sciences',
+          degree: 'BSc AI and Data Analytics (in progress)',
+          institution: 'Mediadesign University of Applied Sciences',
           location: 'Berlin, Germany',
-          period: 'Present',
-          status: 'Currently Enrolled',
-          description: 'Focused on modern web technologies, software architecture, and full-stack development principles.',
+          period: 'Oct 2025 - Present',
+          status: 'In progress',
+          description: 'BSc student in AI and Data Analytics alongside work in data science and AI.',
           type: 'Bachelor Degree'
         },
         {
-          degree: 'Data Science & AI Bootcamp',
+          degree: 'Certificate - Data Science & Artificial Intelligence',
           institution: 'Le Wagon',
           location: 'Berlin, Germany',
           period: 'Apr 2025 - Jun 2025',
@@ -213,11 +213,7 @@ export const translations = {
       keyAreas: 'Key Areas',
       certificationsTitle: 'Certifications & Continued Learning',
       certifications: [
-        'AWS Cloud Practitioner (In Progress)',
-        'Google Cloud Platform Fundamentals',
-        'TensorFlow Developer Certificate (Planned)',
-        'React Professional Certification',
-        'Medical Ethics & Patient Safety'
+        'Le Wagon Certificate - Data Science & Artificial Intelligence (2025)'
       ],
       philosophyTitle: 'Lifelong Learning Philosophy',
       philosophyText: 'My educational journey reflects a commitment to interdisciplinary learning, combining medical science with cutting-edge technology. I believe in the power of continuous learning to bridge traditional healthcare with innovative technological solutions, always staying current with emerging trends in AI, machine learning, and digital health.',
@@ -227,7 +223,7 @@ export const translations = {
       subtitle: 'Multilingual communication enabling global collaboration',
       proficiency: 'Proficiency',
       summaryTitle: 'Multilingual Professional',
-      summaryText: 'Fluent in 6 languages across 3 continents, enabling effective communication in diverse international environments and multicultural teams.',
+      summaryText: 'Working across 4 languages - English, German, Russian and Twi - in international environments and multicultural teams.',
       learning: '🚀 Currently learning',
       levels: {
         native: 'Native',
@@ -333,7 +329,7 @@ export const translations = {
       location: 'Berlin, Deutschland • Deutsche Arbeitserlaubnis',
       availability: 'Verfügbar für sofortige Möglichkeiten',
       multilingualTitle: 'Mehrsprachig & Kreativ',
-      multilingualText1: 'Sprachen: 6 Sprachen auf 3 Kontinenten',
+      multilingualText1: 'Sprachen: 4 Sprachen auf 3 Kontinenten',
       multilingualText2: 'Fokus: Kreatives Schreiben, Philosophie und intellektuelle Beschäftigungen',
     },
     skills: {
@@ -341,9 +337,9 @@ export const translations = {
       subtitle: 'Ein umfassendes Toolkit, das medizinisches Fachwissen mit moderner Technologie verbindet',
       categories: {
         programming: 'Programmiersprachen',
-        frameworks: 'Frameworks & Bibliotheken',
+        frameworks: 'Datenanalyse & Visualisierung',
         ml: 'Maschinelles Lernen',
-        cloud: 'Cloud & DevOps',
+        cloud: 'LLM Applications',
         databases: 'Datenbanken',
         tools: 'Werkzeuge & Plattformen',
       },
@@ -396,40 +392,49 @@ export const translations = {
       subtitle: 'Eine vielseitige Reise durch Gesundheitswesen, Technologie und internationale Wirtschaft',
       jobs: [
         {
-          title: 'Front Office Mitarbeiter und Nacht Auditor',
-          company: 'iNNSiDE by Meliá Berlin Mitte',
-          location: 'Berlin, Deutschland',
-          period: 'Sept 2023 — Jan 2025',
-          type: 'Vollzeit',
-          description: 'Exzellenter Gästeservice durch professionelles Ein- und Auschecken sowie Concierge-Support. Verwaltung von Reservierungen und Buchungssystemen zur Effizienzsteigerung. Lösung von Gästeanliegen mit Empathie und Schnelligkeit. Zusammenarbeit mit Housekeeping, Events und Vertriebsabteilungen für reibungslose tägliche Abläufe. Unterstützung bei administrativen Aufgaben wie Abrechnung, Berichterstattung und Datenbankpflege.',
-          skills: ['Gästeservice', 'Reservierungsmanagement', 'Problemlösung', 'Abteilungsübergreifende Koordination', 'Administrative Unterstützung']
+          title: 'Berater für Künstliche Intelligenz (Freiberuflich)',
+          company: 'Fiverr',
+          location: 'Berlin, Deutschland (Remote)',
+          period: 'Feb 2026 — heute',
+          type: 'Freiberuflich',
+          description: 'Schulung von Firmenmitarbeitern zu neuen KI-Technologien und KI-gestützten Workflow-Management-Tools. Unterstützung von Kunden bei der Identifizierung von KI-Anwendungsfällen und der Einordnung von KI in bestehende Workflows.',
+          skills: ['KI-Schulung', 'KI-Workflow-Tools', 'Use-Case-Analyse', 'Prompt Engineering', 'Beratung']
         },
         {
-          title: 'Medizinische Abrechnung und Kundensupport',
+          title: 'Front Desk Representative',
+          company: 'Meliá Hotels International',
+          location: 'Berlin, Deutschland',
+          period: 'Sept 2023 — Dez 2024',
+          type: 'Vollzeit',
+          description: 'Verwaltung mehrkanaliger Reservierungen per Telefon, E-Mail, Buchungsplattformen (Booking.com, Expedia) und persönlich, über SynXis, Sabre und Amadeus.',
+          skills: ['Gästeservice', 'Reservierungssysteme (SynXis, Sabre, Amadeus)', 'Mehrkanal-Kommunikation', 'Problemlösung']
+        },
+        {
+          title: 'IT-Support und Service Desk (Teilzeit, Remote)',
           company: 'Billing Nerds',
-          location: 'Brooklyn, New York, USA',
+          location: 'Brooklyn, NY, USA',
           period: 'Mär 2021 — Feb 2022',
           type: 'Remote, Teilzeit',
-          description: 'Bearbeitung von medizinischen Abrechnungen und Forderungsmanagement für Kunden im Gesundheitswesen. Überprüfung von Versicherungsinformationen und Sicherstellung der Einhaltung medizinischer Kodierungsstandards. Kommunikation mit Patienten und Versicherern zur Klärung offener Salden. Verbesserung der Abrechnungsgenauigkeit und Reduzierung abgelehner Ansprüche durch detaillierte Überprüfung.',
-          skills: ['Medizinische Abrechnung', 'Versicherungsprüfung', 'Compliance-Management', 'Patientenkommunikation', 'Antragsbearbeitung']
+          description: 'Dateneingabe, Dokumentenprüfung und Prüfung von Krankenversicherungsansprüchen, mit korrekt kategorisierten medizinischen Unterlagen. Erstellung von Berichten zu abgerechneten Behandlungen und Klärung abgelehnter Ansprüche mit großen Krankenversicherern.',
+          skills: ['IT-Support', 'Dokumentenprüfung', 'Versicherungsprüfung', 'Berichterstellung', 'Anspruchsklärung']
         },
         {
-          title: 'Datenanalyst',
-          company: 'Glutality Inc',
-          location: 'Boca Raton, Florida, USA',
+          title: 'Data Analyst und Solutions Engineer (Teilzeit, Remote)',
+          company: 'Glutality',
+          location: 'Boca Raton, FL, USA',
           period: 'Apr 2019 — Mär 2021',
           type: 'Remote, Teilzeit',
-          description: 'Analyse telemetrischer Gesundheitsdaten zur Unterstützung medizinischer Entscheidungen. Zusammenarbeit mit klinischen Teams zur Identifizierung von Unregelmäßigkeiten und Eskalation von Fällen. Erstellung detaillierter analytischer Berichte für Ärzte und Stakeholder. Aufrechterhaltung der Datengenauigkeit und -integrität auf Gesundheitsüberwachungsplattformen.',
-          skills: ['Datenanalyse', 'Klinische Zusammenarbeit', 'Berichterstellung', 'Datenintegrität', 'Gesundheitsüberwachung']
+          description: 'Erstellung von Echtzeit-Dashboards und Berichten in Power BI, Tableau und Grafana. Aufbereitung und Analyse von Daten mit SQL und Python (Pandas, NumPy) unter Anwendung grundlegender Data-Engineering-Praktiken.',
+          skills: ['SQL', 'Python (Pandas, NumPy)', 'Power BI', 'Tableau', 'Grafana', 'Data-Engineering-Grundlagen']
         },
         {
-          title: 'ESL-Lehrer und Methodiker',
-          company: 'SKYENG',
-          location: 'Moskau, Russland',
+          title: 'Englischlehrer und Methodiker',
+          company: 'Skyeng',
+          location: 'Moskau, Russland (Remote)',
           period: 'Dez 2017 — Nov 2019',
           type: 'Remote, Freiberuflich',
-          description: 'Unterricht von Englisch als Zweitsprache für diverse internationale Studenten. Gestaltung personalisierter Unterrichtspläne, zugeschnitten auf die Bedürfnisse der Lernenden. Mentoring und Schulung von Nachwuchslehrern in effektiven Lehrmethoden. Nutzung digitaler Plattformen für ansprechenden Online-Unterricht.',
-          skills: ['ESL-Unterricht', 'Lehrplangestaltung', 'Lehrerausbildung', 'Online-Bildung', 'Studenten-Mentoring']
+          description: 'Englischunterricht für diverse internationale Studenten. Gestaltung personalisierter Unterrichtspläne, zugeschnitten auf die Bedürfnisse der Lernenden. Mentoring und Schulung von Nachwuchslehrern in effektiven Lehrmethoden. Nutzung digitaler Plattformen für ansprechenden Online-Unterricht.',
+          skills: ['Englischunterricht', 'Lehrplangestaltung', 'Lehrerausbildung', 'Online-Bildung', 'Studenten-Mentoring']
         },
         {
           title: 'Verwaltungssekretariat',
@@ -441,22 +446,13 @@ export const translations = {
           skills: ['Programmkoordination', 'Dokumentation', 'Sitzungsvorbereitung', 'NGO-Unterstützung', 'Bürgerschaftliches Engagement']
         },
         {
-          title: 'Verwaltungssekretariat',
-          company: 'Berean Hope Mission (NGO)',
-          location: 'Accra, Ghana',
-          period: 'Sept 2014 — Sept 2016',
-          type: 'Wochenendfreiwillige, Teilzeit',
-          description: 'Büro- und Sekretariatsunterstützung für NGO-Operationen. Unterstützung bei der Organisation von Gemeinschaftsprogrammen und Outreach-Initiativen. Pflege von Korrespondenz und Aufzeichnungen für laufende Projekte.',
-          skills: ['Bürounterstützung', 'Gemeinschaftsprogramme', 'Aktenführung', 'Korrespondenz', 'Outreach-Koordination']
-        },
-        {
           title: 'Klinisches Sekretariat',
-          company: 'Korle-Bu Lehrkrankenhaus, Abteilung für Kindergesundheit',
+          company: 'Korle-Bu Lehrkrankenhaus',
           location: 'Accra, Ghana',
           period: 'Okt 2013 — Aug 2016',
           type: 'Vollzeit',
-          description: 'Unterstützung der Abteilung für Kindergesundheit bei Büroarbeiten und Patientenaktenverwaltung. Koordination von Terminplanung und Abteilungskommunikation. Unterstützung des medizinischen Personals bei Dokumentation und Berichterstattung. Sicherstellung der Einhaltung von Verwaltungsstandards im Krankenhaus.',
-          skills: ['Patientenakten', 'Terminplanung', 'Medizinische Dokumentation', 'Krankenhaus-Compliance', 'Abteilungskoordination']
+          description: 'Unterstützung der Abteilung für Kindergesundheit bei Büroarbeiten und Patientenaktenverwaltung. Koordination von Terminplanung und Abteilungskommunikation. Unterstützung des medizinischen Personals bei Dokumentation und Berichterstattung.',
+          skills: ['Patientenakten', 'Terminplanung', 'Medizinische Dokumentation', 'Abteilungskoordination']
         }
       ],
       stats: {
@@ -474,16 +470,16 @@ export const translations = {
       subtitle: 'Kontinuierliche Lernreise, die Medizin, Technologie und Innovation verbindet',
       degrees: [
         {
-          degree: 'BSc IT - Webanwendungen und Softwareentwicklung',
-          institution: 'Mediendesign Hochschule für Angewandte Wissenschaften',
+          degree: 'BSc AI and Data Analytics (laufend)',
+          institution: 'Mediadesign Hochschule für Angewandte Wissenschaften',
           location: 'Berlin, Deutschland',
-          period: 'Gegenwart',
-          status: 'Aktuell eingeschrieben',
-          description: 'Fokus auf moderne Webtechnologien, Softwarearchitektur und Full-Stack-Entwicklungsprinzipien.',
+          period: 'Okt 2025 - heute',
+          status: 'Laufend',
+          description: 'BSc-Student in AI and Data Analytics neben der Arbeit in Data Science und KI.',
           type: 'Bachelor-Abschluss'
         },
         {
-          degree: 'Data Science & KI Bootcamp',
+          degree: 'Zertifikat - Data Science & Artificial Intelligence',
           institution: 'Le Wagon',
           location: 'Berlin, Deutschland',
           period: 'Apr 2025 - Jun 2025',
@@ -509,11 +505,7 @@ export const translations = {
       keyAreas: 'Schwerpunkte',
       certificationsTitle: 'Zertifizierungen & Weiterbildung',
       certifications: [
-        'AWS Cloud Practitioner (In Arbeit)',
-        'Google Cloud Platform Grundlagen',
-        'TensorFlow Developer Zertifikat (Geplant)',
-        'React Professional Zertifizierung',
-        'Medizinische Ethik & Patientensicherheit'
+        'Le Wagon Zertifikat - Data Science & Artificial Intelligence (2025)'
       ],
       philosophyTitle: 'Philosophie des lebenslangen Lernens',
       philosophyText: 'Meine Bildungsreise spiegelt ein Engagement für interdisziplinäres Lernen wider, das medizinische Wissenschaft mit modernster Technologie verbindet. Ich glaube an die Kraft des kontinuierlichen Lernens, um traditionelles Gesundheitswesen mit innovativen technologischen Lösungen zu verbinden, und bleibe stets auf dem neuesten Stand bei KI, maschinellem Lernen und digitaler Gesundheit.',
@@ -523,7 +515,7 @@ export const translations = {
       subtitle: 'Mehrsprachige Kommunikation ermöglicht globale Zusammenarbeit',
       proficiency: 'Kenntnisse',
       summaryTitle: 'Mehrsprachiger Profi',
-      summaryText: 'Fließend in 6 Sprachen auf 3 Kontinenten, was eine effektive Kommunikation in diversen internationalen Umgebungen und multikulturellen Teams ermöglicht.',
+      summaryText: 'Arbeit in 4 Sprachen - Englisch, Deutsch, Russisch und Twi - in internationalen Umgebungen und multikulturellen Teams.',
       learning: '🚀 Lerne gerade',
       levels: {
         native: 'Muttersprache',

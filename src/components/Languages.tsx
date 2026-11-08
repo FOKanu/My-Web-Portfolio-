@@ -53,22 +53,6 @@ const Languages = () => {
       color: 'text-accent'
     },
     {
-      name: 'Ga',
-      level: 'C1',
-      proficiency: t('languages.levels.advanced'),
-      flag: '🇬🇭',
-      note: t('languages.notes.ghanaian'),
-      color: 'text-secondary'
-    },
-    {
-      name: 'Dagomba',
-      level: 'C2',
-      proficiency: t('languages.levels.native'),
-      flag: '🇬🇭',
-      note: t('languages.notes.ghanaian'),
-      color: 'text-primary'
-    },
-    {
       name: 'Twi',
       level: 'C2',
       proficiency: t('languages.levels.native'),

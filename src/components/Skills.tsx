@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Code, Database, Brain, Cloud, Wrench, GitBranch } from 'lucide-react';
+import { Code, Brain, Cloud, Wrench, GitBranch } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import skillsBg from '@/assets/skills-bg.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -31,37 +31,31 @@ const Skills = () => {
       title: t('skills.categories.programming'),
       icon: Code,
       color: 'text-primary',
-      skills: ['Python', 'JavaScript', 'TypeScript', 'R', 'SQL']
+      skills: ['Python', 'SQL']
     },
     {
       title: t('skills.categories.frameworks'),
       icon: Wrench,
       color: 'text-secondary',
-      skills: ['FastAPI', 'React', 'React Native', 'Expo', 'Node.js']
+      skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Jupyter', 'Power BI', 'Tableau']
     },
     {
       title: t('skills.categories.ml'),
       icon: Brain,
       color: 'text-accent',
-      skills: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'XGBoost', 'Pandas']
+      skills: ['scikit-learn', 'TensorFlow', 'PyTorch', 'Hugging Face']
     },
     {
       title: t('skills.categories.cloud'),
       icon: Cloud,
       color: 'text-primary-glow',
-      skills: ['Docker', 'GitHub Actions', 'GCP', 'AWS', 'Firebase']
-    },
-    {
-      title: t('skills.categories.databases'),
-      icon: Database,
-      color: 'text-secondary',
-      skills: ['PostgreSQL', 'SQLite', 'Supabase', 'MongoDB', 'Redis']
+      skills: ['LangChain', 'RAG Pipelines', 'Prompt Engineering']
     },
     {
       title: t('skills.categories.tools'),
       icon: GitBranch,
       color: 'text-accent',
-      skills: ['Git', 'VS Code', 'Jupyter', 'Postman', 'Figma']
+      skills: ['Git', 'GitHub', 'PostgreSQL']
     }
   ];
 
