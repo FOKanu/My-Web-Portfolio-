@@ -86,15 +86,22 @@ const About = () => {
 
               <Card className="card-professional hover-lift">
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-accent mb-2">50+</div>
+                  <div className="text-3xl font-bold text-accent mb-2">6</div>
                   <div className="text-sm text-muted-foreground">{t('about.stats.projects')}</div>
                 </CardContent>
               </Card>
 
               <Card className="card-professional hover-lift">
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary-glow mb-2">140</div>
-                  <div className="text-sm text-muted-foreground">{t('about.stats.repositories')}</div>
+                  <div className="text-3xl font-bold text-primary-glow mb-2">11</div>
+                  <div className="text-sm text-muted-foreground">{t('about.stats.publicRepositories')}</div>
+                </CardContent>
+              </Card>
+
+              <Card className="card-professional hover-lift">
+                <CardContent className="p-6 text-center">
+                  <div className="text-3xl font-bold text-primary-glow mb-2">150</div>
+                  <div className="text-sm text-muted-foreground">{t('about.stats.privateRepositories')}</div>
                 </CardContent>
               </Card>
 
