@@ -49,7 +49,7 @@ const Skills = () => {
       title: t('skills.categories.cloud'),
       icon: Cloud,
       color: 'text-primary-glow',
-      skills: ['LangChain', 'RAG Pipelines', 'Prompt Engineering']
+      skills: ['LangChain', 'RAG Pipelines', 'Prompt Engineering', 'Context Engineering']
     },
     {
       title: t('skills.categories.tools'),
