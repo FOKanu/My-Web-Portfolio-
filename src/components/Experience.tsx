@@ -130,7 +130,7 @@ const Experience = () => {
         }`}>
           <Card className="card-professional text-center">
             <CardContent className="p-6">
-              <div className="text-2xl font-bold text-primary mb-1">14+</div>
+              <div className="text-2xl font-bold text-primary mb-1">10+</div>
               <div className="text-sm text-muted-foreground">{t('experience.stats.years')}</div>
             </CardContent>
           </Card>
@@ -151,7 +151,7 @@ const Experience = () => {
 
           <Card className="card-professional text-center">
             <CardContent className="p-6">
-              <div className="text-2xl font-bold text-primary-glow mb-1">6</div>
+              <div className="text-2xl font-bold text-primary-glow mb-1">4</div>
               <div className="text-sm text-muted-foreground">{t('experience.stats.languages')}</div>
             </CardContent>
           </Card>
