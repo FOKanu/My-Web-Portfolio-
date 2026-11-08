@@ -85,7 +85,7 @@ const Contact = () => {
       icon: Linkedin,
       label: t('contact.labels.linkedin'),
       value: 'Francis Okore',
-      href: 'https://www.linkedin.com/in/francis-okorie-i-k-817254286',
+      href: 'https://www.linkedin.com/in/francis-o-i-kanu-817254286',
       color: 'text-primary-glow'
     }
   ];
@@ -177,7 +177,7 @@ const Contact = () => {
                     className="border-secondary/30 hover:border-secondary transition-smooth"
                     asChild
                   >
-                    <a href="https://www.linkedin.com/in/francis-okorie-i-k-817254286" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/francis-o-i-kanu-817254286" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="mr-2" size={16} />
                       LinkedIn
                     </a>

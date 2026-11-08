@@ -67,29 +67,29 @@ export const translations = {
       galleryArrow: 'gallery →',
       detailsArrow: 'details →',
       items: {
-        'aria-agentic-system': {
-          description: 'A hybrid AI agentic system balancing privacy and accessibility. It attempts to connect to a local Ollama instance for 100% privacy and falls back to Supabase Edge Functions routing to Gemini 1.5 Flash.',
-          metric: 'Hybrid AI Architecture: Local-First Privacy with Cloud Fallback'
+        'appfly': {
+          description: 'Local-first job-search copilot. Scouts and matches listings on your own machine, drafts Gemini cover letters from your CV and voice samples, and puts every draft in front of you for review — you submit applications yourself. Secrets live in the OS keychain and a crawl deny-list (LinkedIn, Indeed, Stepstone…) is enforced in code.',
+          metric: '87 test files · 3-job CI · local-first, no cloud account'
         },
-        'doctai-health-hub': {
-          description: 'Comprehensive healthcare platform integrating AI-powered diagnostics with patient management and telemedicine capabilities. Features an ensemble of machine learning algorithms for enhanced diagnostic accuracy.',
-          metric: 'Modular UI with 30+ tested components'
+        'unitik-college-ticketing': {
+          description: 'Self-hosted, privacy-compliant university support ticketing platform with a chatbot front door, role-based access (Student / Staff / Admin), AI-assisted ticket classification and an FAQ knowledge base with semantic search. Team project — I was the largest individual contributor.',
+          metric: '43 test files (~230 cases) · bilingual EN/DE FAQ retrieval'
         },
         'skin-check-ai': {
-          description: 'AI-powered skin lesion detection mobile application using computer vision and deep learning to assist in early dermatological diagnosis.',
-          metric: 'Used by early testers to triage 100+ skin photos'
-        },
-        'oasis-finance': {
-          description: 'Machine learning-powered financial analysis platform featuring a Hybrid RNN-Transformer model for market prediction. Integrates LSTM for sequential processing and multi-head attention.',
-          metric: 'Hybrid RNN-Transformer Architecture with Multi-head Attention'
-        },
-        'berlin-connect': {
-          description: 'AI-powered social discovery platform for Berlin. Features smart algorithms for personalized event recommendations and connecting users with shared professional and personal interests.',
-          metric: 'Smart Discovery Algorithm for Personalized Matching'
+          description: 'React Native prototype: photograph a skin lesion, score it with a FastAPI/PyTorch inference API (binary Low/High Risk with confidence), and track results per body spot over time in Supabase with owner-only Row Level Security. Research prototype — not a medical device, and not clinically validated.',
+          metric: 'Binary Low/High-risk scoring · Supabase RLS (owner-only policies)'
         },
         'emotion-classification-ml': {
-          description: 'Trained Hybrid CNN Transform model to classify human emotions based on Facial Expression. Complements a mobile application\'s facial recognition system.',
-          metric: 'Achieved >81% accuracy with Hybrid CNN-Transformer model'
+          description: 'Jupyter notebooks training image classifiers (EfficientNet B2, RegNetY 800MF) for facial-emotion categories where a geometric, rule-based approach performed inconsistently. Built to complement a mobile emotion-recognition application.',
+          metric: '81.2–81.7% test accuracy across the two models (see repo README)'
+        },
+        'college-library-db': {
+          description: 'Relational database for a university library: circulation (loans, reservations, fines), textbook–course linking, and research publication management with citations and access control. Database Systems coursework in a team of three.',
+          metric: '16 tables · 3NF schema · triggers and seed data'
+        },
+        'claude-skills': {
+          description: 'Reusable, structured playbooks ("skills") that turn generic LLM prompting into repeatable workflows — including a clinical-recommendation extractor that converts healthcare evidence (guidelines, research, implementation reports) into implementation-ready outputs.',
+          metric: '2 production-ready domain skills for AI agents'
         }
       }
     },
@@ -361,29 +361,29 @@ export const translations = {
       galleryArrow: 'Galerie →',
       detailsArrow: 'Details →',
       items: {
-        'aria-agentic-system': {
-          description: 'Ein hybrides KI-Agentensystem, das Datenschutz und Zugänglichkeit ausbalanciert. Es versucht, sich für 100% Datenschutz mit einer lokalen Ollama-Instanz zu verbinden, und greift auf Supabase Edge Functions zurück, die zu Gemini 1.5 Flash routen.',
-          metric: 'Hybride KI-Architektur: Local-First-Datenschutz mit Cloud-Fallback'
+        'appfly': {
+          description: 'Local-first Job-Search-Copilot. Durchsucht und matcht Stellenanzeigen auf dem eigenen Rechner, entwirft Gemini-Bewerbungsschreiben aus Lebenslauf und Stimmproben und legt jeden Entwurf zur Prüfung vor — die Bewerbung sendet man selbst. Secrets liegen in der OS-Keychain, und eine Crawl-Deny-List (LinkedIn, Indeed, Stepstone …) ist im Code durchgesetzt.',
+          metric: '87 Testdateien · 3-Job-CI · local-first, kein Cloud-Konto'
         },
-        'doctai-health-hub': {
-          description: 'Umfassende Gesundheitsplattform, die KI-gestützte Diagnostik mit Patientenmanagement und Telemedizin-Funktionen integriert. Verfügt über ein Ensemble von Algorithmen für maschinelles Lernen für verbesserte Diagnosegenauigkeit.',
-          metric: 'Modulare UI mit 30+ getesteten Komponenten'
+        'unitik-college-ticketing': {
+          description: 'Selbst gehostete, datenschutzgerechte Support-Ticketing-Plattform für Universitäten mit Chatbot-Eingang, rollenbasiertem Zugriff (Student / Staff / Admin), KI-gestützter Ticket-Klassifikation und FAQ-Wissensbasis mit semantischer Suche. Teamprojekt — ich war der größte Einzelbeiträger.',
+          metric: '43 Testdateien (~230 Fälle) · zweisprachige EN/DE FAQ-Suche'
         },
         'skin-check-ai': {
-          description: 'KI-gestützte mobile Anwendung zur Erkennung von Hautläsionen unter Verwendung von Computer Vision und Deep Learning zur Unterstützung der frühen dermatologischen Diagnose.',
-          metric: 'Von frühen Testern zur Triage von 100+ Hautfotos verwendet'
-        },
-        'oasis-finance': {
-          description: 'Auf maschinellem Lernen basierende Finanzanalyseplattform mit einem hybriden RNN-Transformer-Modell für Marktvorhersagen. Integriert LSTM für sequentielle Verarbeitung und Multi-Head-Attention.',
-          metric: 'Hybride RNN-Transformer-Architektur mit Multi-Head-Attention'
-        },
-        'berlin-connect': {
-          description: 'KI-gestützte soziale Entdeckungsplattform für Berlin. Verfügt über intelligente Algorithmen für personalisierte Veranstaltungsempfehlungen und verbindet Nutzer mit gemeinsamen beruflichen und persönlichen Interessen.',
-          metric: 'Intelligenter Entdeckungsalgorithmus für personalisiertes Matching'
+          description: 'React-Native-Prototyp: Hautläsion fotografieren, mit einer FastAPI/PyTorch-Inferenz-API bewerten lassen (binär Niedriges/Hohes Risiko mit Konfidenzwert) und Ergebnisse pro Körperstelle in Supabase mit eigentümerbeschränkter Row Level Security verfolgen. Forschungsprototyp — kein Medizinprodukt und nicht klinisch validiert.',
+          metric: 'Binäre Niedrig-/Hochrisiko-Bewertung · Supabase RLS (nur Eigentümer)'
         },
         'emotion-classification-ml': {
-          description: 'Trainiertes hybrides CNN-Transformer-Modell zur Klassifizierung menschlicher Emotionen basierend auf Gesichtsausdrücken. Ergänzt das Gesichtserkennungssystem einer mobilen Anwendung.',
-          metric: 'Erreichte >81% Genauigkeit mit Hybridem CNN-Transformer-Modell'
+          description: 'Jupyter Notebooks, die Bildklassifikatoren (EfficientNet B2, RegNetY 800MF) für Gesichtsemotions-Kategorien trainieren, bei denen ein geometrischer, regelbasierter Ansatz inkonsistent war. Entwickelt als Ergänzung zu einer mobilen Emotionserkennungs-App.',
+          metric: '81,2–81,7 % Testgenauigkeit über beide Modelle (siehe Repo-README)'
+        },
+        'college-library-db': {
+          description: 'Relationale Datenbank für eine Universitätsbibliothek: Ausleihe (Ausleihen, Reservierungen, Gebühren), Verknüpfung von Lehrbüchern und Kursen sowie Verwaltung von Forschungspublikationen mit Zitaten und Zugriffskontrolle. Datenbanksysteme-Kursarbeit in einem Dreierteam.',
+          metric: '16 Tabellen · 3NF-Schema · Trigger und Seed-Daten'
+        },
+        'claude-skills': {
+          description: 'Wiederverwendbare, strukturierte Playbooks („Skills"), die generisches LLM-Prompting in wiederholbare Workflows verwandeln — darunter ein Clinical-Recommendation-Extractor, der Healthcare-Evidenz (Leitlinien, Forschung, Implementierungsberichte) in umsetzungsreife Ergebnisse überführt.',
+          metric: '2 produktionsreife Domain-Skills für KI-Agenten'
         }
       }
     },

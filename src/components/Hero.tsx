@@ -103,7 +103,7 @@ const Hero = () => {
               className="rounded-full border-primary/30 hover:border-primary hover:shadow-glow transition-smooth"
               asChild
             >
-              <a href="https://www.linkedin.com/in/francis-okorie-i-k-817254286" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <a href="https://www.linkedin.com/in/francis-o-i-kanu-817254286" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
                 <Linkedin size={20} />
               </a>
             </Button>
